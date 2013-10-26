@@ -456,9 +456,10 @@ function ug_post_link($permalink) {
 }
 
 add_filter('category_link', 'ug_category_link');
-function ug_category_link($link, $id, $a, $b) {
+function ug_category_link($link) {
 
-	$category = get_category($id);
+	$category = get_category();
+	$categoryId = $category->cat_ID;
 	$categorySlug = get_the_category($id)->slug;
 	$categoryParentId = get_category($id)->parent;
 	$parentCategorySlug = get_category($categoryParentId)->slug;
