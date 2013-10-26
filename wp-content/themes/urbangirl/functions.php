@@ -472,11 +472,12 @@ function ug_category_link($link) {
     );
 
     foreach ($sitesArray as $k => $v) {
-    	if (strpos($k, $link) !== false) {
-    		$link = str_replace($k, $v, $link);
-    	}
+    	$link = str_replace($k, $v, $link);
+    	// if (strpos($k, $link) !== false) {
+    	// 	$link = str_replace($k, $v, $link);
+    	// }
     }
-    
+
     return $link;
 }
 
