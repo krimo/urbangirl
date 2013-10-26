@@ -37,10 +37,6 @@ imagesLoaded( document.querySelector('body'), function() {
         $('html,body').animate({scrollTop:$('#custom-content-begin').offset().top}, 500);
     }
 
-    /** Build the hellocoton widget **/
-    $.getScript( "http://widget.hellocoton.fr/friends/urbangirl/250px", function( data, textStatus, jqxhr ) {
-        data.appendTo($('#hellocoton-holder'));
-    });
 });
 
 $('.ug-menu-toggle').on('click', function() {

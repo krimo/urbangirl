@@ -37,10 +37,7 @@
 		</li>
 	</ul>
 	<hr>
-	<div id="hellocoton-holder"></div>
-	<!-- 
-	<script src="http://widget.hellocoton.fr/friends/urbangirl/250px" type="text/javascript"></script>
-	-->
+	<script src="http://widget.hellocoton.fr/friends/urbangirl/250px" type="text/javascript" async></script>
 	<hr>
 	<h4>Annonceurs</h4>
 	<p>Cliquez <a href="<?= get_page_link(get_page_by_title( 'contact' )->ID); ?>">ici</a> pour nous contacter.</p>
