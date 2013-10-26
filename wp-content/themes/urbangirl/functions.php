@@ -455,6 +455,35 @@ function ug_post_link($permalink) {
     return $permalink;
 }
 
+add_filter('category_link', 'ug_category_link');
+function ug_category_link($link, $id) {
+
+	$category = get_category($id);
+	$categorySlug = get_the_category($id)->slug;
+	$categoryParentId = get_category($id)->parent;
+	$parentCategorySlug = get_category($categoryParentId)->slug;
+    $sitesArray = array(
+    	'actualites' => 'http://urbangirl-actualites.fr',
+    	'mode' => 'http://urbangirl-mode.fr',
+    	'beaute' => 'http://urbangirl-beaute.fr',
+    	'mariage' => 'http://urbangirl-mariage.fr',
+    	'maman' => 'http://urbangirl-maman.fr',
+    	'couple' => 'http://urbangirl-couple.fr',
+    	'gastronomie' => 'http://urbangirl-gastronomie.fr',
+    	'deco' => 'http://urbangirl-decoration.fr',
+    	'bonnes-adresses' => 'http://urbangirl-sorties.fr',
+    	'non-classe' => 'http://96.30.54.222/~urbangi/non-classe',
+    );
+
+    if ($category->category_parent > 0) {
+    	$link = str_replace(get_bloginfo('url').'/'.$parentCategorySlug.'/'.$categorySlug, $sitesArray[$parentCategorySlug].'/'.$categorySlug, $link);
+    } else {
+    	$link = str_replace(get_bloginfo('url').'/'.$categorySlug, $sitesArray[$categorySlug], $link);
+    }
+    
+    return $link;
+}
+
 function wpb_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'La sidebar', 'wpb' ),

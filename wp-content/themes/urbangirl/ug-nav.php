@@ -13,24 +13,8 @@
             ?>
             <li>
                 <?php
-                    $sitesArray = array(
-                        'actualites' => 'http://urbangirl-actualites.fr',
-                        'mode' => 'http://urbangirl-mode.fr',
-                        'beaute' => 'http://urbangirl-beaute.fr',
-                        'mariage' => 'http://urbangirl-mariage.fr',
-                        'maman' => 'http://urbangirl-maman.fr',
-                        'couple' => 'http://urbangirl-couple.fr',
-                        'gastronomie' => 'http://urbangirl-gastronomie.fr',
-                        'deco' => 'http://urbangirl-decoration.fr',
-                        'bonnes-adresses' => 'http://urbangirl-sorties.fr',
-                        'non-classe' => 'http://96.30.54.222/~urbangi/non-classe',
-                    );
-
-                    $theUrlSlug = (get_category($c->term_id)->category_parent > 0) ? get_category(get_category($c->term_id)->parent)->slug : get_category($c->term_id)->slug;
-
-                    $theCategoryLink = str_replace(get_bloginfo('url').'/'.$theUrlSlug, $sitesArray[$theUrlSlug], get_category_link($c->cat_ID));
-
-                    echo '<a href="'.$theCategoryLink.'">'.$c->name.'</a>';
+                    echo '<a href="'.get_category_link($c->cat_ID).'">'.$c->name.'</a>';
+                    
                     $subCategories = get_categories('child_of='.$c->cat_ID.'&hide_empty=0');
 
                     if ($subCategories) {
@@ -40,13 +24,13 @@
                         <div class="row">
                             <div class="large-4 columns">
                                 <ul class="ug-menu-list">
-                                    <?php foreach ($subCategories as $subCat) {
-                                        if ($subCat->count >= 1 ) {
-                                            $theSubUrlSlug = get_category($subCat->term_id)->slug;
-                                            $theSubCategoryLink = str_replace(get_bloginfo('url').'/'.$theUrlSlug.'/'.$theSubUrlSlug, $sitesArray[$theUrlSlug].'/'.$theSubUrlSlug, get_category_link($subCat->cat_ID));
-                                            echo '<li><a href="'.$theSubCategoryLink.'">'.$subCat->name.'</a></li>';
+                                    <?php
+                                        foreach ($subCategories as $subCat) {
+                                            if ($subCat->count >= 1 ) {
+                                                echo '<li><a href="'.get_category_link($subCat->cat_ID).'">'.$subCat->name.'</a></li>';
+                                            }
                                         }
-                                    } ?>
+                                    ?>
                                 </ul>
                             </div>
                             <div class="large-8 columns">
