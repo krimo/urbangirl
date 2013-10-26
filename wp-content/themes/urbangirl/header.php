@@ -147,8 +147,7 @@
     <title><?= (is_home()) ? get_bloginfo('name') : ucfirst($pagename) . ' | ' . get_bloginfo('name'); ?></title>
 
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-    <link rel="stylesheet" href="<?= get_template_directory_uri().'/css/' ?>ug-custom-switch.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    <script src="<?= get_template_directory_uri().'/js/' ?>modernizr.min.js"></script>
 </head>
 
 <body class="ug-home ug-page">

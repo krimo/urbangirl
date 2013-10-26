@@ -17,8 +17,7 @@
     <title><?php single_cat_title(); ?> | <?php bloginfo('name'); ?></title>
 
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-    <link rel="stylesheet" href="<?= get_template_directory_uri().'/css/' ?>ug-custom-switch.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    <script src="<?= get_template_directory_uri().'/js/' ?>modernizr.min.js"></script>
 </head>
 
 <body class="ug-category ug-page ug-<?= is_subcategory() ? get_category(get_category(get_query_var('cat'))->parent)->slug : get_category(get_query_var('cat'))->slug; ?>">
