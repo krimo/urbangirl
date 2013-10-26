@@ -11,6 +11,7 @@ if (searchClass) {
 if (menuClass) {
     new cbpHorizontalSlideOutMenu(menuClass);
 }
+
 imagesLoaded( document.querySelector('body'), function() {
 
     var mySwiper = $('.swiper-container').swiper({
@@ -35,6 +36,14 @@ imagesLoaded( document.querySelector('body'), function() {
     if ($.cookie('ug_preferences') && $('#authentication').text() == '0') {
         $('html,body').animate({scrollTop:$('#custom-content-begin').offset().top}, 500);
     }
+
+    /** Build the hellocoton widget **/
+    $.getScript( "http://widget.hellocoton.fr/friends/urbangirl/250px", function( data, textStatus, jqxhr ) {
+        console.log( data ); // Data returned
+        console.log( textStatus ); // Success
+        console.log( jqxhr.status ); // 200
+        console.log( "Load was performed." );
+    });
 });
 
 $('.ug-menu-toggle').on('click', function() {
