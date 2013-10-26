@@ -39,10 +39,7 @@ imagesLoaded( document.querySelector('body'), function() {
 
     /** Build the hellocoton widget **/
     $.getScript( "http://widget.hellocoton.fr/friends/urbangirl/250px", function( data, textStatus, jqxhr ) {
-        console.log( data ); // Data returned
-        console.log( textStatus ); // Success
-        console.log( jqxhr.status ); // 200
-        console.log( "Load was performed." );
+        data.appendTo($('#hellocoton-holder'));
     });
 });
 
