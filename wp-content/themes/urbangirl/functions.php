@@ -456,7 +456,7 @@ function ug_post_link($permalink) {
 }
 
 add_filter('category_link', 'ug_category_link');
-function ug_category_link($link, $id) {
+function ug_category_link($link, $id, $a, $b) {
 
 	$category = get_category($id);
 	$categorySlug = get_the_category($id)->slug;
@@ -480,7 +480,7 @@ function ug_category_link($link, $id) {
     } else {
     	$link = str_replace(get_bloginfo('url').'/'.$categorySlug, $sitesArray[$categorySlug], $link);
     }
-    
+
     return $link;
 }
 
