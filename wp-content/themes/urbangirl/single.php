@@ -36,7 +36,7 @@
                 <div class="large-5 columns">
                     <ul class="inline-list">
                         <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-via="your_screen_name" data-lang="en" data-related="anywhereTheJavascriptAPI" data-count="vertical">Tweet</a></li>
-                        <li><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.urbangirl.fr&amp;width=80&amp;height=65&amp;colorscheme=light&amp;layout=box_count&amp;action=like&amp;show_faces=false&amp;send=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:65px;" allowTransparency="true"></iframe></li>
+                        <li><div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="box_count" data-width="450" data-show-faces="false" data-action="like"></div></li>
                         <li><div class="g-plusone" data-annotation="bubble" data-size="tall" data-width="50" data-lang="fr"></div></li>
                     </ul>
                 </div>

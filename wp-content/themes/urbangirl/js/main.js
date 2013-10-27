@@ -90,7 +90,7 @@ $(window).scroll(function() {
     if ($('.ug-share-article').length) {
         if (!hasLoaded && $('.ug-share-article').isOnScreen()) {
             loadTwitter();
-            // loadFacebook();
+            loadFacebook();
             loadGooglePlus();
             hasLoaded = true;
         }
@@ -231,7 +231,7 @@ function loadFacebook() {
     if (typeof (FB) != 'undefined') {
         FB.init({ status: true, cookie: true, xfbml: true });
     } else {
-        $.getScript("http://connect.facebook.net/en_US/all.js#xfbml=1", function () {
+        $.getScript("//connect.facebook.net/fr_FR/all.js#xfbml=1", function () {
             FB.init({ status: true, cookie: true, xfbml: true });
         });
     }
