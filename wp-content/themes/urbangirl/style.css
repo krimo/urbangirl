@@ -11,3 +11,7 @@ Author URI: http://krimohafsaoui.com
 .ug-article-meta em {
 	color: #a5a5a5;
 }
+
+.ug-panel .crop img {
+	min-height: 200px;
+}

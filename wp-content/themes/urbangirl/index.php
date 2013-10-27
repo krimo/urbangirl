@@ -33,7 +33,7 @@
 						</ul>
 
 						<div class="crop">
-						<?php (has_post_thumbnail()) ? the_post_thumbnail() : displayBackupImage(); ?>
+						<?php (has_post_thumbnail() && the_post_thumbnail() !== NULL) ? the_post_thumbnail() : displayBackupImage(); ?>
 						</div>
 
 						<footer class="ug-panel-inner">
