@@ -91,7 +91,7 @@
 		foreach ($categories as $cat) { if ($cat->count >= 4 && $cat->parent == '0') { ?>
 		<section class="home-section row">
 			<div class="large-12 columns">
-				<h3 class="ug-home-title"><span><?= (is_user_logged_in()) ? 'Vos articles '.$cat->name : $cat->name;?></span></h3>
+				<h3 class="ug-home-title"><span><a href="<?= get_category_link($cat); ?>"><?= (is_user_logged_in()) ? 'Vos articles '.$cat->name : $cat->name;?></a></span></h3>
 				<div class="row">
 					<div class="large-6 columns">
 						<?php
