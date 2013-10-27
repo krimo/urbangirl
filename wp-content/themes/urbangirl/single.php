@@ -21,7 +21,7 @@
     <article class="large-8 columns ug-single-article">
         <header>
             <h1><?php the_title(); ?></h1>
-            <p><em>par</em> <?php the_author(); ?> <em>il y a</em> <?= human_time_diff( get_the_time('U'), current_time('timestamp') ); ?> &bull; <?php echo get_the_category_list(", "); ?></p>
+            <p class="ug-article-meta"><em>par</em> <?php ucfirst(the_author()); ?> <em>il y a</em> <?= human_time_diff( get_the_time('U'), current_time('timestamp') ); ?> &bull; <?php echo get_the_category_list(", "); ?></p>
         </header>
         <hr>
 
@@ -93,7 +93,7 @@
             </div>
             <div class="row">
                 <div class="large-12 columns">
-                    <p><small>Crédits photos : <a href="#">lorem ipsum</a></small></p>
+                    <p><small>Crédits photos : <?= '<a href="'.get_post_meta(get_the_ID(), 'ug-photo-credits', true).'">'.get_post_meta(get_the_ID(), 'ug-photo-credits', true).'</a>'; ?></small></p>
                 </div>
             </div>
         </footer>
