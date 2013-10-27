@@ -39,6 +39,7 @@
                         <li><div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="box_count" data-width="450" data-show-faces="false" data-action="like"></div></li>
                         <li><div class="g-plusone" data-annotation="bubble" data-size="tall" data-width="50" data-lang="fr"></div></li>
                     </ul>
+                    <div id="fb-root"></div>
                 </div>
                 <div class="large-7 columns">
                     <button class="large expand button" data-reveal-id="ug-share-modal">Envoyer cet article à vos amies &rarr;</button>
