@@ -140,7 +140,7 @@
                     </div>
                 </div>
             </section>
-            <hr class="home-hr hide-for-large">
+            <hr class="home-hr show-for-small">
         </div>
         <div class="large-4 columns">
             <?php get_sidebar(); ?>

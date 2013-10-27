@@ -34,11 +34,6 @@
             <h4 class="ug-home-title"><span>Partagez cet article</span></h4>
             <section class="row ug-share-article">
                 <div class="large-5 columns">
-                    <!-- <ul class="inline-list ug-share-icons" >
-                        <li><a href="http://twitter.com/share?url=<?php the_permalink();?>" class="social-link icon-twitter"></a></li>
-                        <li><a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>" class="social-link icon-facebook"></a></li>
-                        <li><a href="https://plus.google.com/share?url=<?php the_permalink();?>" class="social-link icon-google-plus"></a></li>
-                    </ul> -->
                     <ul class="inline-list">
                         <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-via="your_screen_name" data-lang="en" data-related="anywhereTheJavascriptAPI" data-count="vertical">Tweet</a></li>
                         <li><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.urbangirl.fr&amp;width=80&amp;height=65&amp;colorscheme=light&amp;layout=box_count&amp;action=like&amp;show_faces=false&amp;send=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:65px;" allowTransparency="true"></iframe></li>
@@ -85,7 +80,7 @@
                         </ul>
 
                         <div class="crop">
-                            <?php (has_post_thumbnail()) ? the_post_thumbnail() : displayBackupImage(); ?>
+                            <?php (has_post_thumbnail() && the_post_thumbnail() !== NULL) ? the_post_thumbnail() : displayBackupImage(); ?>
                         </div>
 
                         <footer class="ug-panel-inner">
