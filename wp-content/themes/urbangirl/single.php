@@ -21,7 +21,7 @@
     <article class="large-8 columns ug-single-article">
         <header>
             <h1><?php the_title(); ?></h1>
-            <p class="ug-article-meta"><em>par</em> <?php ucfirst(the_author()); ?> <em>il y a</em> <?= human_time_diff( get_the_time('U'), current_time('timestamp') ); ?> &bull; <?php echo get_the_category_list(", "); ?></p>
+            <p class="ug-article-meta"><em>par</em> <?= ucfirst(get_the_author()); ?> <em>il y a</em> <?= human_time_diff( get_the_time('U'), current_time('timestamp') ); ?> &bull; <?php echo get_the_category_list(", "); ?></p>
         </header>
         <hr>
 
