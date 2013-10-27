@@ -3057,8 +3057,8 @@ msgstr[1] "%s mois"
 #: wp-includes/formatting.php:2170
 msgid "%s year"
 msgid_plural "%s years"
-msgstr[0] "%s année"
-msgstr[1] "%s années"
+msgstr[0] "%s an"
+msgstr[1] "%s ans"
 
 #: wp-includes/formatting.php:2223 wp-includes/general-template.php:2044
 msgid "&hellip;"
