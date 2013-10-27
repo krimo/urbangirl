@@ -228,15 +228,19 @@ function loadTwitter() {
 }
 
 function loadFacebook() {
-    if (typeof (FB) != 'undefined') {
-        FB.init({ status: true, cookie: true, xfbml: true });
-        FB.XFBML.parse();
-    } else {
-        $.getScript("//connect.facebook.net/fr_FR/all.js#xfbml=1", function () {
-            FB.init({ status: true, cookie: true, xfbml: true });
-            FB.XFBML.parse();
-        });
-    }
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol +
+      '//connect.facebook.net/en_US/all.js#xfbml=1';
+    document.getElementById('fb-root').appendChild(e);
+    // if (typeof (FB) != 'undefined') {
+    //     FB.init({ status: true, cookie: true, xfbml: true });
+    //     FB.XFBML.parse();
+    // } else {
+    //     $.getScript("//connect.facebook.net/fr_FR/all.js", function () {
+    //         FB.init({ status: true, cookie: true, xfbml: true });
+    //         FB.XFBML.parse();
+    //     });
+    // }
 }
 
 function loadGooglePlus(){
