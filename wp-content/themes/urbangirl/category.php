@@ -130,7 +130,7 @@
                 <div class="row">
                     <hr class="home-hr">
                     <div class="large-3 columns">
-                        <img src="<?= get_template_directory_uri().'/images/' ?>category-img.png" alt="beauty">
+                        <img src="<?= get_template_directory_uri().'/images/' ?>category-img.png" alt="Bienvenue sur la categorie <?php single_cat_title('',false); ?>" class="hide-for-small">
                     </div>
                     <div class="large-9 columns">
                         <div class="ug-category-description">
@@ -140,6 +140,7 @@
                     </div>
                 </div>
             </section>
+            <hr class="home-hr hide-for-large">
         </div>
         <div class="large-4 columns">
             <?php get_sidebar(); ?>
