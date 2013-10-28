@@ -7,8 +7,10 @@
             <?php // (has_post_thumbnail() && the_post_thumbnail() !== NULL) ? the_post_thumbnail() : displayBackupImage(); ?>
             <?php
                 if (the_post_thumbnail() !== NULL) {
+                    var_dump('IT WORK.')
                     the_post_thumbnail();
                 } else {
+                    var_dump('IT FAIL.')
                     displayBackupImage();
                 }
             ?>
