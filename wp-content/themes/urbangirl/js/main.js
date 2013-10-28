@@ -2,8 +2,7 @@ $(document).foundation();
 
 var searchClass = document.getElementById( 'sb-search' ),
     menuClass = document.getElementById( 'cbp-hsmenu-wrapper' ),
-    slidesnumber = parseInt($('#slidesnumber').text(),10),
-    categoriesShown = false;
+    slidesnumber = parseInt($('#slidesnumber').text(),10);
 
 if (searchClass) {
     new UISearch(searchClass);
@@ -34,10 +33,9 @@ imagesLoaded( document.querySelector('body'), function() {
 
     $('img:not(.ug-logo)').addClass('img-loaded');
 
-    console.log(categoriesShown);
-    if ($.cookie('ug_preferences') && $('#authentication').text() == '0' && !categoriesShown) {
+    if ($.cookie('ug_preferences') && $('#authentication').text() == '0' && !$.cookie('categoriesShown')) {
         $('html,body').animate({scrollTop:$('#custom-content-begin').offset().top}, 500);
-        categoriesShown = true;
+        $.cookie("categoriesShown", 1);
     }
 
 });
