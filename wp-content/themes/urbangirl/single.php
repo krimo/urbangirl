@@ -9,9 +9,6 @@
                 if (the_post_thumbnail() !== NULL) {
                     var_dump('IT WORK.');
                     the_post_thumbnail();
-                } else {
-                    var_dump('IT FAIL.');
-                    displayBackupImage();
                 }
             ?>
             <figcaption><?= (get_post(get_post_thumbnail_id())->post_excerpt) ? get_post(get_post_thumbnail_id())->post_excerpt : the_title('','',false);?></figcaption>
