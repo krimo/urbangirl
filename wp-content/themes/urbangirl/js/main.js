@@ -2,7 +2,8 @@ $(document).foundation();
 
 var searchClass = document.getElementById( 'sb-search' ),
     menuClass = document.getElementById( 'cbp-hsmenu-wrapper' ),
-    slidesnumber = parseInt($('#slidesnumber').text(),10);
+    slidesnumber = parseInt($('#slidesnumber').text(),10),
+    var categoriesShown = false;
 
 if (searchClass) {
     new UISearch(searchClass);
@@ -33,8 +34,9 @@ imagesLoaded( document.querySelector('body'), function() {
 
     $('img:not(.ug-logo)').addClass('img-loaded');
 
-    if ($.cookie('ug_preferences') && $('#authentication').text() == '0') {
+    if ($.cookie('ug_preferences') && $('#authentication').text() == '0' && !categoriesShown) {
         $('html,body').animate({scrollTop:$('#custom-content-begin').offset().top}, 500);
+        categoriesShown = true;
     }
 
 });
@@ -201,7 +203,7 @@ $('#ug-modal-save-form').on('valid', function(e) {
 
 });
 
-$('#no-thanks').on('click', function() {
+$('#no-thanks, #save-email-modal .close-reveal-modal').on('click', function() {
     $('.ug-personalization-form').submit();
 });
 
