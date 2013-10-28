@@ -90,7 +90,8 @@ $.fn.isOnScreen = function(){
 
 };
 
-var hasLoaded = false;
+var hasShareLoaded = false,
+    hasHellocotonLoaded = false;
 $(window).scroll(function() {
     if($('.ug-footer').isOnScreen()) {
         $('#ug-scroll-top-btn, .bottom-page-prompt').addClass('open');
@@ -99,12 +100,17 @@ $(window).scroll(function() {
     }
 
     if ($('.ug-share-article').length) {
-        if (!hasLoaded && $('.ug-share-article').isOnScreen()) {
+        if (!hasShareLoaded && $('.ug-share-article').isOnScreen()) {
             loadTwitter();
             // loadFacebook();
             loadGooglePlus();
-            hasLoaded = true;
+            hasShareLoaded = true;
         }
+    }
+
+    if (!hasHellocotonLoaded && $('#hellocoton-script').isOnScreen()) {
+        document.getElementById('hellocoton-script').src = 'http://widget.hellocoton.fr/friends/urbangirl/250px';
+        hasHellocotonLoaded = true;
     }
 });
 
