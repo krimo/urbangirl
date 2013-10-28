@@ -45,10 +45,10 @@ $('.ug-menu-toggle').on('click', function() {
 });
 
 
-var checkbox = document.querySelectorAll('.ug-switch-btn'),
+var ugCheckbox = document.querySelectorAll('.ug-switch-btn'),
     i=0;
 
-$.each(checkbox, function() {
+$.each(ugCheckbox, function() {
     i++;
 
     var mySwitch = new Switch(this),
@@ -62,6 +62,17 @@ $.each(checkbox, function() {
     if (i === 1 && !$.cookie('ug_preferences') && $('#authentication').text() == '0') {
         mySwitch.toggle();
     }
+});
+
+$('.zero-out').on('click', function(e) {
+    e.preventDefault();
+
+    $.each(ugCheckbox, function() {
+        if (this.checked) {
+            this.checked = false;
+            console.log(this.name);
+        }
+    });
 });
 
 $.fn.isOnScreen = function(){

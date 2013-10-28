@@ -49,6 +49,7 @@
 				</li>
 				<li class="clearfix">
 					<button class="button medium left expand" <?= (is_user_logged_in()) ? 'type="submit"' : 'type="button" data-reveal-id="save-email-modal"'; ?> name="ug-update"><?= (is_user_logged_in()) ? 'Modifier' : 'Et voilà !' ?> &rarr;</button>
+                    <p class="text-center"><small><a href="#" class="zero-out">Remettre à zéro</a></small></p>
 				</li>
 			</ul>
 			<?php if (is_user_logged_in()) { ?>
