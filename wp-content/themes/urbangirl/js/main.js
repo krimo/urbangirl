@@ -34,6 +34,7 @@ imagesLoaded( document.querySelector('body'), function() {
 
     $('img:not(.ug-logo)').addClass('img-loaded');
 
+    console.log(categoriesShown);
     if ($.cookie('ug_preferences') && $('#authentication').text() == '0' && !categoriesShown) {
         $('html,body').animate({scrollTop:$('#custom-content-begin').offset().top}, 500);
         categoriesShown = true;
@@ -92,7 +93,7 @@ $(window).scroll(function() {
     if ($('.ug-share-article').length) {
         if (!hasLoaded && $('.ug-share-article').isOnScreen()) {
             loadTwitter();
-            loadFacebook();
+            // loadFacebook();
             loadGooglePlus();
             hasLoaded = true;
         }
