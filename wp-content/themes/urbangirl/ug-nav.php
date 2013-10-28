@@ -1,7 +1,7 @@
 <nav class="cbp-hsmenu-wrapper" id="cbp-hsmenu-wrapper">
     <div class="cbp-hsinner">
         <ul class="cbp-hsmenu">
-            <li><a href="<?php bloginfo('url'); ?>" class="icon-home tip-top" data-tooltip data-options="disable-for-touch:true" title="Revenir à la page d'accueil"></a></li>
+            <li><a href="<?php bloginfo('url'); ?>" class="icon-house tip-top" data-tooltip data-options="disable-for-touch:true" title="Revenir à la page d'accueil"></a></li>
             <?php if(!is_user_logged_in()) { ?>
             <li><a href="<?= get_page_link('10938'); ?>" class="icon-user tip-top" data-tooltip data-options="disable-for-touch:true" title="Vos mesures"></a></li>
             <?php } ?>
@@ -14,7 +14,7 @@
             <li>
                 <?php
                     echo '<a href="'.get_category_link($c->cat_ID).'">'.$c->name.'</a>';
-                    
+
                     $subCategories = get_categories('child_of='.$c->cat_ID.'&hide_empty=0');
 
                     if ($subCategories) {
