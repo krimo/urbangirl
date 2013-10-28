@@ -4,14 +4,11 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <aside class="large-4 columns hide-for-small">
         <figure>
-            <?php // (has_post_thumbnail() && the_post_thumbnail() !== NULL) ? the_post_thumbnail() : displayBackupImage(); ?>
             <?php
-
-                var_dump(get_the_post_thumbnail());
-
-                if (the_post_thumbnail() !== NULL) {
-                    var_dump('IT WORK.');
-                    the_post_thumbnail();
+                if (get_the_post_thumbnail()) {
+                    echo get_the_post_thumbnail();
+                } else {
+                    displayBackupImage();
                 }
             ?>
             <figcaption><?= (get_post(get_post_thumbnail_id())->post_excerpt) ? get_post(get_post_thumbnail_id())->post_excerpt : the_title('','',false);?></figcaption>
