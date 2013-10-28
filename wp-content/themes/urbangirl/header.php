@@ -146,7 +146,6 @@
     <meta name="description" content="<?php bloginfo('description'); ?>">
     <title><?= (is_home()) ? get_bloginfo('name') : ucfirst($pagename) . ' | ' . get_bloginfo('name'); ?></title>
 
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <script src="<?= get_template_directory_uri().'/js/' ?>modernizr.min.js"></script>
 </head>

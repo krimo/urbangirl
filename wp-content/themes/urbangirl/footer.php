@@ -23,7 +23,7 @@
 
                 <ul class="small-block-grid-3 ug-social-list text-center">
                     <li>
-                        <a href="https://twitter.com/intent/user?screen_name=urbangirlco" class="social-link"><i class="fa fa-twitter"></i></a>
+                        <a href="https://twitter.com/intent/user?screen_name=urbangirlco" class="social-link icon-twitter"></a>
                         <p><em class="twitter-share-count"><?= twitter_count(); ?></em></p>
                     </li>
                     <li>
