@@ -203,7 +203,8 @@ $('#ug-modal-save-form').on('valid', function(e) {
 
 });
 
-$('#no-thanks, #save-email-modal .close-reveal-modal').on('click', function() {
+$('#no-thanks, #save-email-modal .close-reveal-modal').on('click', function(e) {
+    e.preventDefault();
     $('.ug-personalization-form').submit();
 });
 
