@@ -5,7 +5,13 @@
     <aside class="large-4 columns hide-for-small">
         <figure>
             <?php // (has_post_thumbnail() && the_post_thumbnail() !== NULL) ? the_post_thumbnail() : displayBackupImage(); ?>
-            <?php the_post_thumbnail(); ?>
+            <?php
+                if (the_post_thumbnail() !== NULL) {
+                    the_post_thumbnail();
+                } else {
+                    displayBackupImage();
+                }
+            ?>
             <figcaption><?= (get_post(get_post_thumbnail_id())->post_excerpt) ? get_post(get_post_thumbnail_id())->post_excerpt : the_title('','',false);?></figcaption>
         </figure>
         <a href="<?= get_page_link('11021'); ?>"><img src="<?= get_template_directory_uri().'/images/' ?>my-ug.png" alt=""></a>
