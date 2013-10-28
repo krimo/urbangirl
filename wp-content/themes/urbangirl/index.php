@@ -7,7 +7,7 @@
 			<div class="large-7 columns">
                 <?php get_template_part( 'ug-personalize' ); ?>
 				<hr>
-				<p>Parce que nous n'avons pas le temps de perdre du temps, UrbanGirl vous propose une navigation innovante et sur-mesure. Indiquez-nous votre profil grâce aux indications ci-dessus, puis naviguez à votre gré !</p>
+				<p>Parce que nous n'avons pas le temps de perdre du temps, UrbanGirl vous propose une navigation innovante et sur-mesure. Indiquez-nous votre profil grâce aux indications ci-dessus, puis naviguez à votre gré ! <a href="#" class="icon-twitter"></a></p>
 			</div>
 			<div class="large-5 columns">
 				<h4 class="ug-home-title"><span>Articles du jour</span></h4>

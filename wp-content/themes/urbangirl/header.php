@@ -162,7 +162,7 @@
     <div id="top" style="position:absolute;top:0;left:0;width:100%;height:0;"></div>
 
     <header class="ug-header">
-        <a href="#" class="ug-menu-toggle show-for-small icon-menu"></a>
+        <a href="#" class="ug-menu-toggle show-for-small icon-list"></a>
 
         <div class="row">
             <div class="large-12 columns">
