@@ -70,7 +70,6 @@ $('.zero-out').on('click', function(e) {
     $.each(ugCheckbox, function() {
         if (this.checked) {
             $('input[name='+this.name+']').parent().find('.ios-switch').click();
-            console.log(this.name);
         }
     });
 });
