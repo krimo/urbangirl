@@ -21,9 +21,9 @@
                     <li><a href="<?= get_page_link(11029); ?>">Mentions légales</a></li>
                 </ul>
 
-                <ul class="small-block-grid-3 ug-social-list text-center">                   
+                <ul class="small-block-grid-3 ug-social-list text-center">
                     <li>
-                        <a href="https://twitter.com/intent/user?screen_name=urbangirlco" class="social-link icon-twitter"></a>
+                        <a href="https://twitter.com/intent/user?screen_name=urbangirlco" class="social-link"><i class="fa fa-twitter"></i></a>
                         <p><em class="twitter-share-count"><?= twitter_count(); ?></em></p>
                     </li>
                     <li>
@@ -145,7 +145,7 @@
 
     <div id="slidesnumber" style="display:none;"><?= $slidesToDisplay; ?></div>
     <div id="authentication" style="display:none;"><?= (is_user_logged_in()) ? '1' : '0'; ?></div>
-    
+
     <script type="text/javascript">
         var templateDirUri = "<?= get_template_directory_uri() ?>";
     </script>
