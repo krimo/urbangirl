@@ -3,7 +3,7 @@ $(document).foundation();
 var searchClass = document.getElementById( 'sb-search' ),
     menuClass = document.getElementById( 'cbp-hsmenu-wrapper' ),
     slidesnumber = parseInt($('#slidesnumber').text(),10),
-    var categoriesShown = false;
+    categoriesShown = false;
 
 if (searchClass) {
     new UISearch(searchClass);
