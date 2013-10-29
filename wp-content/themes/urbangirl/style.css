@@ -6448,3 +6448,7 @@ body.gastronomy .category-title {
     margin-top: 1em;
     font-style: italic;
 }
+
+.muted {
+    color:#aaa;
+}
