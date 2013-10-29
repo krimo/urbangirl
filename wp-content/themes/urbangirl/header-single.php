@@ -1,7 +1,5 @@
 <?php
 
-    var_dump($_SERVER[HTTP_HOST]);
-
     // $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
     // $uriArray = explode('/', $_SERVER[REQUEST_URI]);
