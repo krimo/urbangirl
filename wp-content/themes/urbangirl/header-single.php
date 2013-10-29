@@ -16,7 +16,7 @@
         'non-classe' => 'http://96.30.54.222/~urbangi/non-classe',
     );
 
-    if (array_key_exists($urlSlug, $sitesArray) && ($_SERVER[HTTP_HOST] == '96.30.54.222') || $_SERVER[HTTP_HOST] == 'urbangirl.fr')) {
+    if (array_key_exists($urlSlug, $sitesArray) && ($_SERVER[HTTP_HOST] == '96.30.54.222' || $_SERVER[HTTP_HOST] == 'urbangirl.fr')) {
         $new_link = str_replace('http://96.30.54.222/~urbangi/'.$urlSlug, $sitesArray[$urlSlug], $actual_link);
         header("HTTP/1.1 301 Moved Permanently");
         header("Location: $new_link");
