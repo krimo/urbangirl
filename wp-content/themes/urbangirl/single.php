@@ -44,7 +44,9 @@
                     <ul class="inline-list">
                         <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-via="urbangirlco" data-lang="en" data-related="anywhereTheJavascriptAPI" data-count="vertical">Tweet</a></li>
                         <li>
+                            <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width=50&amp;height=65&amp;colorscheme=light&amp;layout=box_count&amp;action=like&amp;show_faces=true&amp;send=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:65px;" allowTransparency="true"></iframe>
                             <iframe src="//www.facebook.com/plugins/like.php?href=<?= urlencode(the_permalink()); ?>&amp;width=50&amp;height=65&amp;colorscheme=light&amp;layout=box_count&amp;action=like&amp;show_faces=true&amp;send=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:65px;" allowTransparency="true"></iframe>
+                            <!-- <div class="fb-like" data-href="" data-width="50" data-height="" data-colorscheme="light" data-layout="box_count" data-action="like" data-show-faces="false" data-send="false"></div> -->
                         </li>
                         <li><div class="g-plusone" data-annotation="bubble" data-size="tall" data-width="50" data-lang="fr"></div></li>
                     </ul>
