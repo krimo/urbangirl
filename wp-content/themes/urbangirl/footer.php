@@ -31,7 +31,7 @@
                         <p><em class="facebook-share-count"><?= fb_count(); ?></em></p>
                     </li>
                     <li>
-                        <a href="https://plus.google.com/share?url=http%3A%2F%2Furbangirl.fr" class="social-link icon-google-plus"></a>
+                        <a href="https://plus.google.com/share?url=http%3A%2F%2Furbangirl.fr" class="social-link icon-googleplus"></a>
                         <p><em class="google-share-count"><?= gplus_count(); ?></em></p>
                     </li>
                 </ul>

@@ -20,7 +20,7 @@
             <ul class="small-block-grid-3 ug-social-list text-center" >
                 <li><a href="http://twitter.com/share?url=<?php the_permalink();?>" class="social-link icon-twitter" target="_blank"></a></li>
                 <li><a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>" class="social-link icon-facebook"></a></li>
-                <li><a href="https://plus.google.com/share?url=<?php the_permalink();?>" class="social-link icon-google-plus"></a></li>
+                <li><a href="https://plus.google.com/share?url=<?php the_permalink();?>" class="social-link icon-googleplus"></a></li>
             </ul>
         </div>
     </aside>
