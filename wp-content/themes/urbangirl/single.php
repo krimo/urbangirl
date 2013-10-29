@@ -119,7 +119,7 @@
             <h4>A découvrir sur UrbanGirl</h4>
             <ul class="ug-article-list">
                 <?php
-                $args = array( 'posts_per_page' => 2, 'orderby' => 'rand', 'meta_key' => 'ug-featured-post', 'meta_value' => 1 );
+                $args = array( 'posts_per_page' => 2, 'orderby' => 'rand', 'meta_key' => 'ug-featured-post', 'meta_value' => '1' );
                 $rand_posts = get_posts( $args );
                 foreach ( $rand_posts as $post ) : setup_postdata( $post );?>
                     <li>
