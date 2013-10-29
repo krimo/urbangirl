@@ -6442,3 +6442,9 @@ body.gastronomy .category-title {
 .ug-panel:not(.bottom-page-prompt) .crop img {
     min-height: 200px;
 }
+
+.ug-photo-credits {
+    line-height: 1;
+    margin-top: 1em;
+    font-style: italic;
+}

@@ -102,7 +102,7 @@
             </div>
             <div class="row">
                 <div class="large-12 columns">
-                    <p><small>Crédits photos : <?= '<a href="'.get_post_meta(get_the_ID(), 'ug-photo-credits', true).'">'.get_post_meta(get_the_ID(), 'ug-photo-credits', true).'</a>'; ?></small></p>
+                    <p class="ug-photo-credits"><small>Crédits photos : <?= get_post_meta(get_the_ID(), 'ug-photo-credits', true); ?></small></p>
                 </div>
             </div>
         </footer>
