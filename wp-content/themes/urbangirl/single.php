@@ -34,7 +34,7 @@
                 <em>il y a</em> <?= human_time_diff( get_the_time('U'), current_time('timestamp') ); ?>
                 <?php
                 foreach((get_the_category()) as $category) {
-                    echo ', <a href="'.get_category_link( $category_id ).'">'.$category->cat_name.'</a>';
+                    echo ', <a href="'.get_category_link( $category->cat_ID ).'">'.$category->cat_name.'</a>';
                     if($category->slug == 'a-decouvrir') continue;
                 } ?>
             </p>
