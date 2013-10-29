@@ -18,6 +18,7 @@
 
     if (array_key_exists($urlSlug, $sitesArray)) {
         $new_link = str_replace('http://96.30.54.222/~urbangi/'.$urlSlug, $sitesArray[$urlSlug], $actual_link);
+        var_dump($new_link);
         header("HTTP/1.1 301 Moved Permanently");
         header("Location: $new_link");
     }
