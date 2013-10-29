@@ -47,8 +47,12 @@
             <div class="row">
                 <?php
                 $categories = get_categories('child_of='.get_category(get_query_var('cat'))->cat_ID);
+                $displayedCats = array();
                 $i = 0;
-                foreach ($categories as $cat) { if ($cat->count >= 1 && $i<2) { $i++; ?>
+                foreach ($categories as $cat) { if ($cat->count >= 1 && $i<2) {
+                    $i++;
+                    array_push($displayedCats, $cat->cat_ID);
+                ?>
                 <div class="large-6 columns">
                     <h4 class="ug-home-title"><span><?=$cat->name;?></span></h4>
                     <ul class="ug-article-list">
@@ -80,7 +84,7 @@
                 <?php } } ?>
             </div>
             <div class="row">
-                <?php foreach ($categories as $cat) { if ($cat->count >= 1 && $i>=2 && $i<4) { $i++; ?>
+                <?php foreach ($categories as $cat) { if ($cat->count >= 1 && $i>=2 && $i<4 && !in_array($cat->cat_ID, $displayedCats)) { $i++; ?>
                 <div class="large-6 columns">
                     <h4 class="ug-home-title"><span><?=$cat->name;?></span></h4>
                     <ul class="ug-article-list">
