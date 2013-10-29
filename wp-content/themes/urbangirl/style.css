@@ -6023,22 +6023,44 @@ body.gastronomy .category-title {
     -ms-transition:all .5s ease-out;
     transition:all .5s ease-out
 }
+
+.category-intro .ug-category-description:after {
+    content: "";
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr='#00E7E7E2',endColorstr='#FFE7E7E2');
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+    background-size: 100%;
+    background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,rgba(231, 231, 226, 0)),color-stop(100%,#E7E7E2));
+    background-image: -webkit-linear-gradient(top,rgba(231, 231, 226, 0) 0,#E7E7E2 100%);
+    background-image: -moz-linear-gradient(top,rgba(231,231,226,0) 0,#e7e7e2 100%);
+    background-image: -o-linear-gradient(top,rgba(231,231,226,0) 0,#e7e7e2 100%);
+    background-image: linear-gradient(top,rgba(231,231,226,0) 0,#e7e7e2 100%);
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+}
+
 .category-intro .ug-category-description.open {
     max-height:9999px
 }
+
 .category-intro .ug-category-read-more {
     font-size:1.5em;
     text-align:center;
     width:100%;
     position:absolute;
     bottom:0;
-    left:0;
+    left:0;/*
     background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,transparent),color-stop(1,#fafafa));
     background-image:-webkit-linear-gradient(top,transparent,#fafafa);
     background-image:-moz-linear-gradient(top,transparent,#fafafa);
     background-image:-ms-linear-gradient(top,transparent,#fafafa);
-    background-image:-o-linear-gradient(top,transparent,#fafafa)
+    background-image:-o-linear-gradient(top,transparent,#fafafa)*/
 }
+
 #ug-scroll-top-btn {
     display:block;
     background:#ee145b;
