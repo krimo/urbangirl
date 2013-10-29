@@ -28,7 +28,10 @@
     <article class="large-8 columns ug-single-article">
         <header>
             <h1><?php the_title(); ?></h1>
-            <p class="ug-article-meta"><em>par</em> <?= ucfirst(get_the_author()); ?> <em>il y a</em> <?= human_time_diff( get_the_time('U'), current_time('timestamp') ); ?> &bull; <?php echo get_the_category_list(", "); ?></p>
+            <p class="ug-article-meta">
+                <em>par</em> <?= ucfirst(get_the_author()); ?>
+                <em>il y a</em> <?= human_time_diff( get_the_time('U'), current_time('timestamp') ); ?>
+                <?php foreach((get_the_category()) as $category) { echo ', <a href="'.get_category_link( $category_id ).'">'.$category->cat_name.'</a>' ; if($category->slug == 'a-decouvrir') continue; ?></p>
         </header>
         <hr>
 
@@ -118,7 +121,7 @@
             <h4>A découvrir sur UrbanGirl</h4>
             <ul class="ug-article-list">
                 <?php
-                $args = array( 'posts_per_page' => 2, 'orderby' => 'rand', 'meta_key' => 'ug-featured-post', 'meta_value' => '1' );
+                $args = array( 'posts_per_page' => 2, 'orderby' => 'rand', 'category' => 4029);
                 $rand_posts = get_posts( $args );
                 foreach ( $rand_posts as $post ) : setup_postdata( $post );?>
                     <li>
