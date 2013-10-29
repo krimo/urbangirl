@@ -59,7 +59,7 @@
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
 								<?php
-									$args = (isset($categories_to_display)) ? array('post_type' => 'post','posts_per_page' => 5, 'cat' => $categories_to_display,'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num') : array('post_type' => 'post','posts_per_page' => 5,'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num');
+									$args = (isset($categories_to_display)) ? array('post_type' => 'post','posts_per_page' => 5, 'cat' => $categories_to_display,'meta_key' => 'ug_post_views_count', 'orderby' => 'meta_value_num') : array('post_type' => 'post','posts_per_page' => 5,'meta_key' => 'ug_post_views_count', 'orderby' => 'meta_value_num');
 									$query = new WP_Query($args);
 									while ($query->have_posts()) : $query->the_post();
 								?>
