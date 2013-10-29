@@ -1,4 +1,27 @@
 <?php
+    $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+    $uriArray = explode('/', $_SERVER[REQUEST_URI]);
+    $urlSlug = ($uriArray[0] === '~urbangi') ? $uriArray[1] : $uriArray[0];
+    $sitesArray = array(
+        'actualites' => 'http://urbangirl-actualites.fr',
+        'mode' => 'http://urbangirl-mode.fr',
+        'beaute' => 'http://urbangirl-beaute.fr',
+        'mariage' => 'http://urbangirl-mariage.fr',
+        'maman' => 'http://urbangirl-maman.fr',
+        'couple' => 'http://urbangirl-couple.fr',
+        'gastronomie' => 'http://urbangirl-gastronomie.fr',
+        'deco' => 'http://urbangirl-decoration.fr',
+        'bonnes-adresses' => 'http://urbangirl-sorties.fr',
+        'non-classe' => 'http://96.30.54.222/~urbangi/non-classe',
+    );
+
+    if (array_key_exists($urlSlug, $sitesArray)) {
+        $new_link = str_replace('http://96.30.54.222/~urbangi/'.$urlSlug, $sitesArray[$urlSlug], $actual_link);
+        header("HTTP/1.1 301 Moved Permanently");
+        header("Location: $new_link");
+    }
+
     $category_slug = get_the_category()[0]->slug;
     if (in_array($category_slug, array('beaute', 'maman'))) {
         $logo_slug = 'logo-alt-black.png';
@@ -8,7 +31,7 @@
 
     if (isset($_POST['share-this-article'])) {
         $emailArray = explode(',', $_POST['share-this-article']);
-        
+
         foreach ($emailArray as $email) {
             $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         }
