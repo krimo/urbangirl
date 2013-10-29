@@ -6014,7 +6014,7 @@ body.gastronomy .category-title {
 }
 .category-intro .ug-category-description {
     margin-bottom:0;
-    max-height:120px;
+    max-height:160px;
     position:relative;
     overflow:hidden;
     -webkit-transition:all .5s ease-out;
@@ -6026,14 +6026,14 @@ body.gastronomy .category-title {
 
 .category-intro .ug-category-description:after {
     content: "";
-    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr='#00E7E7E2',endColorstr='#FFE7E7E2');
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr='#00FAFAFA',endColorstr='#FFFAFAFA');
     background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
     background-size: 100%;
-    background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,rgba(231, 231, 226, 0)),color-stop(100%,#E7E7E2));
-    background-image: -webkit-linear-gradient(top,rgba(231, 231, 226, 0) 0,#E7E7E2 100%);
-    background-image: -moz-linear-gradient(top,rgba(231,231,226,0) 0,#e7e7e2 100%);
-    background-image: -o-linear-gradient(top,rgba(231,231,226,0) 0,#e7e7e2 100%);
-    background-image: linear-gradient(top,rgba(231,231,226,0) 0,#e7e7e2 100%);
+    background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,rgba(231, 231, 226, 0)),color-stop(100%,#fafafa));
+    background-image: -webkit-linear-gradient(top,rgba(231, 231, 226, 0) 0,#fafafa 100%);
+    background-image: -moz-linear-gradient(top,rgba(231,231,226,0) 0,#fafafa 100%);
+    background-image: -o-linear-gradient(top,rgba(231,231,226,0) 0,#fafafa 100%);
+    background-image: linear-gradient(top,rgba(231,231,226,0) 0,#fafafa 100%);
     display: block;
     position: absolute;
     pointer-events: none;
@@ -6045,6 +6045,10 @@ body.gastronomy .category-title {
 
 .category-intro .ug-category-description.open {
     max-height:9999px
+}
+
+.category-intro .ug-category-description.open:after {
+    background-image: none;
 }
 
 .category-intro .ug-category-read-more {
