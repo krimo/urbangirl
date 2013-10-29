@@ -2,7 +2,7 @@
 <!-- Main article -->
 <article class="row" role="main">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-    <?php ug_set_post_views(get_the_ID()); ?>
+        <?php ug_set_post_views(get_the_ID()); ?>
     <aside class="large-4 columns hide-for-small">
         <figure>
             <?php
@@ -31,7 +31,12 @@
             <p class="ug-article-meta">
                 <em>par</em> <?= ucfirst(get_the_author()); ?>
                 <em>il y a</em> <?= human_time_diff( get_the_time('U'), current_time('timestamp') ); ?>
-                <?php foreach((get_the_category()) as $category) { echo ', <a href="'.get_category_link( $category_id ).'">'.$category->cat_name.'</a>' ; if($category->slug == 'a-decouvrir') continue; ?></p>
+                <?php
+                foreach((get_the_category()) as $category) {
+                    echo ', <a href="'.get_category_link( $category_id ).'">'.$category->cat_name.'</a>';
+                    if($category->slug == 'a-decouvrir') continue;
+                } ?>
+            </p>
         </header>
         <hr>
 
@@ -64,7 +69,7 @@
             <div class="panel">
                 <div class="row">
                     <div class="large-3 columns">
-                        <img src="<?= get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>" alt="">
+                        <img src="<?= get_avatar( get_the_author_meta( 'ID' ), 256 ); ?>" alt="">
                     </div>
                     <div class="large-9 columns">
                         <h4>A propos de <?php the_author(); ?></h4>
