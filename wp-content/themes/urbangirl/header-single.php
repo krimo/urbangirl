@@ -2,7 +2,7 @@
     $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
     $uriArray = explode('/', $_SERVER[REQUEST_URI]);
-    $urlSlug = ($uriArray[0] === '~urbangi') ? $uriArray[1] : $uriArray[0];
+    $urlSlug = ($uriArray[1] === '~urbangi') ? $uriArray[2] : $uriArray[1];
     $sitesArray = array(
         'actualites' => 'http://urbangirl-actualites.fr',
         'mode' => 'http://urbangirl-mode.fr',
@@ -15,9 +15,6 @@
         'bonnes-adresses' => 'http://urbangirl-sorties.fr',
         'non-classe' => 'http://96.30.54.222/~urbangi/non-classe',
     );
-
-
-    var_dump($uriArray);
 
     if (array_key_exists($urlSlug, $sitesArray)) {
         $new_link = str_replace('http://96.30.54.222/~urbangi/'.$urlSlug, $sitesArray[$urlSlug], $actual_link);
