@@ -83,6 +83,7 @@
                 </div>
                 <?php } } ?>
             </div>
+            <hr class="home-hr">
             <div class="row">
                 <?php foreach ($categories as $cat) { if ($cat->count >= 1 && $i>=2 && $i<4 && !in_array($cat->cat_ID, $displayedCats)) { $i++; ?>
                 <div class="large-6 columns">
