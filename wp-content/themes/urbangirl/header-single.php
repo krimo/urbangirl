@@ -17,7 +17,7 @@
     );
 
 
-    var_dump($urlSlug);
+    var_dump($uriArray);
 
     if (array_key_exists($urlSlug, $sitesArray)) {
         $new_link = str_replace('http://96.30.54.222/~urbangi/'.$urlSlug, $sitesArray[$urlSlug], $actual_link);
