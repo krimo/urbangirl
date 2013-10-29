@@ -90,7 +90,7 @@
 
 		<?php
 
-		$categories = (isset($categories_to_display) && $categories_to_display !== 'all') ? get_categories('include='.$categories_to_display) : get_categories();
+		$categories = (isset($categories_to_display) && $categories_to_display !== 'all') ? get_categories('include='.$categories_to_display.'&exclude=4029') : get_categories('exclude=4029');
 
 		foreach ($categories as $cat) { if ($cat->count >= 4 && $cat->parent == '0') { ?>
 		<section class="home-section row">
