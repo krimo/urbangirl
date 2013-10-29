@@ -46,7 +46,7 @@
         <div class="large-8 columns">
             <div class="row">
                 <?php
-                $categories = get_categories('child_of='.get_category(get_query_var('cat'))->cat_ID.'&number=2');
+                $categories = get_categories('child_of='.get_category(get_query_var('cat'))->cat_ID.'&number=4');
                 foreach ($categories as $cat) { ?>
                 <div class="large-6 columns">
                     <h4 class="ug-home-title"><span><?=$cat->name;?></span></h4>

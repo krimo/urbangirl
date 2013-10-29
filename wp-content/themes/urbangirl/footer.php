@@ -1,14 +1,8 @@
     <div class="row">
         <div class="large-12 columns">
-            <!-- <ul class="breadcrumbs">
-                <li><a href="#">Acceuil</a></li>
-                <li><a href="#">Bonnes Adresses</a></li>
-                <li><a href="#">Paris</a></li>
-            </ul> -->
             <p class="text-center">
                 <?php if (function_exists('seomix_content_breadcrumb')) seomix_content_breadcrumb(); ?>
             </p>
-
         </div>
     </div>
 
