@@ -385,7 +385,7 @@ function twitter_count($screenName = 'urbangirlco')
         'consumer_key' => "WNZyKqjUhHPNH60r2savgQ",
         'consumer_secret' => "JJpKOwl1DuBSHJdoDtbnxM8MkM8lqbYw5geOusY54KY"
     );
- 
+
     $numberOfFollowers = false;
 
     // cache version does not exist or expired
@@ -394,19 +394,19 @@ function twitter_count($screenName = 'urbangirlco')
         $apiUrl = "https://api.twitter.com/1.1/users/show.json";
         $requestMethod = 'GET';
         $getField = '?screen_name=' . $screenName;
- 
+
         $twitter = new TwitterAPIExchange($settings);
         $response = $twitter->setGetfield($getField)
              ->buildOauth($apiUrl, $requestMethod)
              ->performRequest();
- 
+
         $followers = json_decode($response);
         $numberOfFollowers = $followers->followers_count;
-  
+
         // cache for a day
         set_transient('twitter_count', $json->likes, 60*60*24); // 24 hour cache
     }
-  
+
     return $numberOfFollowers;
 }
 
@@ -443,13 +443,13 @@ function ug_post_link($permalink) {
     foreach (get_the_category($post->ID) as $c) {
         array_push($chooseCat, $c->term_id);
     }
-    
+
     if (sizeof($chooseCat) > 0) {
 	    $chooseCatId = min($chooseCat);
 
 	    $theSlug = (get_category($chooseCatId)->category_parent > 0) ? get_category(get_category($chooseCatId)->parent)->slug : get_category($chooseCatId)->slug;
 
-	    $permalink = str_replace(get_bloginfo('url').'/'.$theSlug, $sitesArray[$theSlug], $permalink);    	
+	    $permalink = str_replace(get_bloginfo('url').'/'.$theSlug, $sitesArray[$theSlug], $permalink);
     }
 
     return $permalink;
@@ -489,6 +489,21 @@ function wpb_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'wpb_widgets_init' );
+
+function ug_set_post_views($postID) {
+    $count_key = 'ug_post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+//To keep the count accurate, lets get rid of prefetching
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 
 ?>

@@ -59,13 +59,9 @@
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
 								<?php
-									$args = (isset($categories_to_display)) ? array('post_type' => 'post','posts_per_page' => 5, 'cat' => $categories_to_display) : array('post_type' => 'post','posts_per_page' => 5);
+									$args = (isset($categories_to_display)) ? array('post_type' => 'post','posts_per_page' => 5, 'cat' => $categories_to_display,'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num') : array('post_type' => 'post','posts_per_page' => 5,'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num');
 									$query = new WP_Query($args);
 									while ($query->have_posts()) : $query->the_post();
-
-                                    $featured_article = get_post_meta(get_the_ID(), 'ug-featured-post', true);
-                                    if ($featured_article == '1') {
-
 								?>
 								<div class="swiper-slide">
 									<div class="crop">
@@ -77,7 +73,7 @@
 										<p><?php the_excerpt(); ?> <br> <a href="<?php echo get_permalink(); ?>">Lire l'article &raquo;</a></p>
 									</div>
 								</div>
-								<?php } endwhile; ?>
+								<?php endwhile; ?>
 							</div>
 						</div>
 					</div>

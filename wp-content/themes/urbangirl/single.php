@@ -2,6 +2,7 @@
 <!-- Main article -->
 <article class="row" role="main">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php ug_set_post_views(get_the_ID()); ?>
     <aside class="large-4 columns hide-for-small">
         <figure>
             <?php
@@ -118,9 +119,9 @@
             <h4>A découvrir sur UrbanGirl</h4>
             <ul class="ug-article-list">
                 <?php
-                $args = array( 'posts_per_page' => 2, 'orderby' => 'rand' );
+                $args = array( 'posts_per_page' => 2, 'orderby' => 'rand', 'meta_key' => 'ug-featured-post', 'meta_value' => 1 );
                 $rand_posts = get_posts( $args );
-                foreach ( $rand_posts as $post ) : setup_postdata( $post ); ?>
+                foreach ( $rand_posts as $post ) : setup_postdata( $post );?>
                     <li>
                         <article class="clearfix">
                             <a href="<?php the_permalink() ?>" class="left picture">
