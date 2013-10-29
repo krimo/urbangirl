@@ -46,8 +46,9 @@
         <div class="large-8 columns">
             <div class="row">
                 <?php
-                $categories = get_categories('child_of='.get_category(get_query_var('cat'))->cat_ID.'&number=4');
-                foreach ($categories as $cat) { ?>
+                $categories = get_categories('child_of='.get_category(get_query_var('cat'))->cat_ID);
+                $i = 0;
+                foreach ($categories as $cat) { if ($cat->count >= 1 && i<2) { $i++; ?>
                 <div class="large-6 columns">
                     <h4 class="ug-home-title"><span><?=$cat->name;?></span></h4>
                     <ul class="ug-article-list">
@@ -76,7 +77,39 @@
                         <?php endwhile; ?>
                     </ul>
                 </div>
-                <?php } ?>
+                <?php } } ?>
+            </div>
+            <div class="row">
+                <?php foreach ($categories as $cat) { if ($cat->count >= 1 && i>=2 && i<4) { $i++; ?>
+                <div class="large-6 columns">
+                    <h4 class="ug-home-title"><span><?=$cat->name;?></span></h4>
+                    <ul class="ug-article-list">
+
+                        <?php
+                            $args = array(
+                                'post_type' => 'post',
+                                'category_name' => $cat->slug,
+                                'posts_per_page' => 3
+                            );
+                            $query = new WP_Query($args);
+                            while ($query->have_posts()) : $query->the_post();
+                        ?>
+
+                        <li>
+                            <article class="clearfix">
+                                <a href="<?php the_permalink(); ?>" class="left picture">
+                                    <div class="crop crop-small">
+                                        <?php (has_post_thumbnail()) ? the_post_thumbnail() : displayBackupImage(); ?>
+                                    </div>
+                                </a>
+                                <h5><a href="<?php the_permalink() ?>"><?php the_title(); ?></a> <br><small>publié il y a <em><?= human_time_diff( get_the_time('U'), current_time('timestamp') ); ?></em></small></h5>
+                            </article>
+                        </li>
+
+                        <?php endwhile; ?>
+                    </ul>
+                </div>
+                <?php } } ?>
             </div>
             <div class="row">
                 <div class="large-12 columns">
