@@ -1,6 +1,6 @@
 <?php
 
-    var_dump($_SERVER[HTTP_HOST]);
+    var_dump($_SERVER['PHP_SELF']);
 
     // $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
