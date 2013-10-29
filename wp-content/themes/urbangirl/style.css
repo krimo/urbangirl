@@ -10,6 +10,13 @@ Author URI: http://krimohafsaoui.com
 
 @charset "UTF-8";
 @font-face {
+  font-family: 'dingbats';
+  src: url("fonts/dingbats.eot");
+  src: url("fonts/dingbats.eot?#iefix") format("embedded-opentype"), url("fonts/dingbats.woff") format("woff"), url("fonts/dingbats.ttf") format("truetype"), url("fonts/dingbats.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: "ug-icons";
   src:url("fonts/ug-icons.eot");
   src:url("fonts/ug-icons.eot?#iefix") format("embedded-opentype"),
