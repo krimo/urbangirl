@@ -149,9 +149,25 @@
             <h4>Partagez cet article avec vos amies</h4>
             <p>Il vous suffit de renseigner des adresses e-mail separées par une virgule (,)</p>
             <hr>
+            <?php
+                if (is_user_logged_in()) {
+                    global $current_user;
+                    get_currentuserinfo();
+                }
+            ?>
             <form action="#" method="post" id="ug-share-article-form" data-abide>
-                <input type="text" name="share-this-article" placeholder="email1@email.com,email2@email.com..." pattern="^((\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*([,])*)*$" required>
-                <small class="error">Vous n'avez pas respecté le format.</small>
+                <div class="name-field">
+                    <input type="text" name="ug-share-name" value="<?= ucfirst($current_user->display_name); ?>" placeholder="Votre nom" required>
+                    <small class="error">Merci de renseigner votre nom</small>
+                </div>
+                <div class="email-field">
+                    <input type="email" name="ug-share-email" value="<?= $current_user->user_email; ?>" placeholder="Votre e-mail" required>
+                    <small class="error">Merci d'indiquer un e-mail valide</small>
+                </div>
+                <div class="email-field">
+                    <input type="text" name="ug-share-email-list" placeholder="email1@email.com,email2@email.com..." pattern="^((\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*([,])*)*$" required>
+                    <small class="error">Vous n'avez pas respecté le format.</small>
+                </div>
                 <button class="button expand" type="submit">Envoyer &rarr;</button>
             </form>
         </div>

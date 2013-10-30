@@ -507,8 +507,8 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 add_action('init', 'ug_send_article');
 function ug_send_article() {
     global $post;
-    if (isset($_POST['share-this-article'])) {
-        $emailArray = explode(',', $_POST['share-this-article']);
+    if (isset($_POST['ug-share-email-list'])) {
+        $emailArray = explode(',', $_POST['ug-share-email-list']);
 
         foreach ($emailArray as $email) {
             $email = filter_var($email, FILTER_SANITIZE_EMAIL);
