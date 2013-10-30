@@ -11,7 +11,7 @@
                     <div class="swiper-wrapper">
                         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                         <div class="swiper-slide">
-                            <?php // get_template_part('ug-article-panel'); ?>
+                            <?php get_template_part('ug-article-panel'); ?>
                         </div>
                         <?php endwhile; else: ?>
                         <p><?php _e('Pas d\'articles ici...'); ?></p>
@@ -50,7 +50,7 @@
                         ?>
 
                         <li>
-                            <?php // get_template_part('ug-article-small'); ?>
+                            <?php get_template_part('ug-article-small'); ?>
                         </li>
 
                         <?php endwhile; ?>
