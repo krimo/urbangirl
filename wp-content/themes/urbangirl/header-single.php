@@ -1,5 +1,5 @@
 <?php
-
+    header("UG-REDIRECTED: 1");
     // $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
     // $uriArray = explode('/', $_SERVER[REQUEST_URI]);
