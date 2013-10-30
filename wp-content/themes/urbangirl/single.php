@@ -85,6 +85,7 @@
             <?php } ?>
 
             <h4 class="ug-home-title"><span>Vous aimerez aussi</span></h4>
+            <?php var_dump($currentPostCategories); ?>
             <div class="row">
                 <?php
                 $args = array( 'posts_per_page' => 2, 'orderby' => 'rand', 'category' => implode(',', $currentPostCategories) );
