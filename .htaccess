@@ -13,6 +13,8 @@ AddType font/woff .woff
 RewriteEngine On
 # RewriteCond %{REQUEST_URI} /gastronomie/ [NC]
 # RewriteRule ^(.*)gastronomie/(.*)$ http://urbangirl-gastronomie.fr/$2 [L,P]
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^urbangirl-actualites\.fr$ [NC]
 RewriteRule ^(.*)$ http://96.30.54.222/~urbangi/actualites/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-gastronomie\.fr$ [NC]
