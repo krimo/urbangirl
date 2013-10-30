@@ -9,12 +9,12 @@
 		<?php else: ?>
 		<p class="lead">Pas de contenu.</p>
 		<?php endif; ?>
-		
+
 		<form data-abide class="ug-contact-form" method="post" action="#">
 			<div class="name-field">
 				<label>Nom complet <small>obligatoire</small></label>
 				<input type="text" name="ug-contact-name" required pattern="[a-zA-Z]+">
-				<small class="error">Ce champ est requis et doit etre une chaine de caracteres.</small>
+				<small class="error">Ce champ est requis et doit être une chaîne de caractères.</small>
 			</div>
 			<div class="row">
 				<div class="large-6 columns">
