@@ -18,7 +18,7 @@
 		<a href="#" class="close">&times;</a>
 	</div>
 	<hr>
-	<a href="http://journalduluxe.fr"><img src="<?= get_template_directory_uri() . '/images/pub.jpg' ?>" alt=""></a>
+	<a href="http://journalduluxe.fr"><img src="<?= get_template_directory_uri() . '/images/pub.jpg' ?>" alt="Le Journal du Luxe"></a>
 	<?php (is_active_sidebar('sidebar-1')) ? dynamic_sidebar( 'sidebar-1' ) : ''; ?>
 	<hr>
 	<h4>Suivez UrbanGirl</h4>
@@ -53,14 +53,7 @@
             while ($query->have_posts()) : $query->the_post();
         ?>
         <li>
-            <article class="clearfix">
-                    <a href="<?php echo get_permalink(); ?>" class="left picture">
-                        <div class="crop crop-small">
-                            <?php (has_post_thumbnail()) ? the_post_thumbnail() : displayBackupImage(); ?>
-                        </div>
-                    </a>
-                <h5><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a> <br><small>publié il y a <em><?= human_time_diff( get_the_time('U'), current_time('timestamp') ); ?></em></small></h5>
-            </article>
+            <?php get_template_part('ug-article-small'); ?>
         </li>
         <?php endwhile; ?>
     </ul>
