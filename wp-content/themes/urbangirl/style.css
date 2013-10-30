@@ -5118,6 +5118,11 @@ img[src^="http://www.hellocoton"] {
     background:transparent;
     width:15px
 }
+.ug-old-img[src^="http://stats.buzzea"] {
+    padding: 0 !important;
+    background: #fafafa;
+    width: auto;
+}
 figure {
     background:#000;
     margin:0;

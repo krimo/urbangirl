@@ -3,7 +3,7 @@
         <ul class="cbp-hsmenu">
             <li class="ug-menu-icon"><a href="<?php bloginfo('url'); ?>" class="icon-house tip-top" data-tooltip data-options="disable-for-touch:true" title="Revenir à la page d'accueil"></a></li>
             <?php if(!is_user_logged_in()) { ?>
-            <li class="ug-menu-icon"><a href="<?= get_page_link('10938'); ?>" class="icon-user tip-top" data-tooltip data-options="disable-for-touch:true" title="Vos mesures"></a></li>
+            <li class="ug-menu-icon"><a href="<?= get_page_link('11021'); ?>" class="icon-user tip-top" data-tooltip data-options="disable-for-touch:true" title="Vos mesures"></a></li>
             <?php } ?>
 
             <?php
