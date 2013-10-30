@@ -43,7 +43,7 @@
                             $args = array(
                                 'post_type' => 'post',
                                 'category_name' => $cat->slug,
-                                'posts_per_page' => 3
+                                'posts_per_page' => 6
                             );
                             $query = new WP_Query($args);
                             while ($query->have_posts()) : $query->the_post();
@@ -69,7 +69,7 @@
                             $args = array(
                                 'post_type' => 'post',
                                 'category_name' => $cat->slug,
-                                'posts_per_page' => 3
+                                'posts_per_page' => 6
                             );
                             $query = new WP_Query($args);
                             while ($query->have_posts()) : $query->the_post();
