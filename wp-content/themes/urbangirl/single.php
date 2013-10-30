@@ -91,7 +91,7 @@
                 $rand_posts = get_posts( $args );
                 foreach ( $rand_posts as $post ) : setup_postdata( $post ); ?>
                 <div class="large-6 columns">
-                    <?php get_template_part('ug-article-panel'); ?>
+                    <?php get_template_part('loop','ug-article-panel'); ?>
                 </div>
                 <?php endforeach; wp_reset_postdata();?>
             </div>
