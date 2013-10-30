@@ -50,7 +50,7 @@
                         ?>
 
                         <li>
-                            <?php get_template_part('ug-article-small'); ?>
+                            <?php // get_template_part('ug-article-small'); ?>
                         </li>
 
                         <?php endwhile; ?>
