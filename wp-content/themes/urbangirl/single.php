@@ -90,7 +90,7 @@
                 $args = array(
                     'posts_per_page' => 2,
                     'orderby' => 'rand',
-                    'category' => implode(',', $currentPostCategories)
+                    'cat' => implode(',', $currentPostCategories)
                 );
                 $query = new WP_Query($args);
                 while ($query->have_posts()) : $query->the_post();
