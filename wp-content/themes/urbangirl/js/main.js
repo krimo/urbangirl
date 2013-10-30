@@ -108,11 +108,13 @@ $(window).scroll(function() {
         }
     }
 
-    if ($('#hellocoton-script').length) {
+    if ($('#hellocoton-script').isOnScreen()) {
         if (!hasHellocotonLoaded && $('#hellocoton-script').isOnScreen()) {
-            document.getElementById('hellocoton-script').src = 'http://widget.hellocoton.fr/friends/urbangirl/250px';
+            var helloCotonScript = document.createElement('script');
+            helloCotonScript.src = 'http://widget.hellocoton.fr/friends/urbangirl/250px';
+            document.getElementById('hellocoton-script').appendChild(helloCotonScript);
             hasHellocotonLoaded = true;
-        }  
+        }
     }
 });
 

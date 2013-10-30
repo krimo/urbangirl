@@ -37,7 +37,7 @@
 		</li>
 	</ul>
 	<hr>
-    <script id="hellocoton-script" type="text/JavaScript"></script>
+    <div id="hellocoton-script"></div>
     <!--
 	<script src="http://widget.hellocoton.fr/friends/urbangirl/250px" type="text/javascript"></script>
      -->
