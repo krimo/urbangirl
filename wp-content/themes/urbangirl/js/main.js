@@ -109,7 +109,8 @@ $(window).scroll(function() {
     }
 
     if ($('#hellocoton-script').isOnScreen()) {
-        if (!hasHellocotonLoaded && $('#hellocoton-script').isOnScreen()) {
+        if (!hasHellocotonLoaded) {
+            console.log('log hellocoton');
             var helloCotonScript = document.createElement('script');
             helloCotonScript.src = 'http://widget.hellocoton.fr/friends/urbangirl/250px';
             document.getElementById('hellocoton-script').appendChild(helloCotonScript);
