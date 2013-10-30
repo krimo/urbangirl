@@ -13,7 +13,9 @@
     </div>
 
     <footer class="ug-panel-inner">
+        <?php if (!is_old_post()) { ?>
         <p><em><?= 'il y a '.human_time_diff( get_the_time('U'), current_time('timestamp') ); ?></em></p>
+        <?php } ?>
         <h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
     </footer>
 </article>

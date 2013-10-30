@@ -525,4 +525,15 @@ function ug_send_article() {
     }
 }
 
+
+function is_old_post($days = 121) {
+    $days = (int) $days;
+    $offset = $days*60*60*24;
+    if ( get_post_time() < date('U') - $offset ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 ?>
