@@ -98,11 +98,10 @@
                 <div class="large-6 columns">
                     <?php get_template_part('ug-article-panel'); ?>
                 </div>
-                <?php endwhile;?>
+                <?php endwhile; wp_reset_query();?>
             </div>
             <div class="row">
                 <div class="large-12 columns">
-                    <?php var_dump(get_post_meta(get_the_ID())); ?>
                     <p class="ug-photo-credits"><small>Crédits photos : <span class="muted"><?= get_post_meta(get_the_ID(), 'ug-photo-credits', true); ?></span></small></p>
                 </div>
             </div>
