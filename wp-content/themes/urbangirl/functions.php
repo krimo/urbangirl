@@ -477,8 +477,8 @@ function ug_category_link($link) {
     return $link;
 }
 
-add_filter('page_link', 'ug_page_link');
-function ug_page_link($link) {
+add_filter('the_permalink', 'ug_permalink');
+function ug_permalink($link) {
 
     $sitesArray = array(
         get_bloginfo('url').'/actualites' => 'http://urbangirl-actualites.fr',
