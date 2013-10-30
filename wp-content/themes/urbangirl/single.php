@@ -1,7 +1,10 @@
 <?php get_header('single'); ?>
 <!-- Main article -->
 <article class="row" role="main">
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php
+    $currentPostCategories = array();
+    if (have_posts()) : while (have_posts()) : the_post();
+    ?>
 
     <?php ug_set_post_views(get_the_ID()); ?>
     <aside class="large-4 columns hide-for-small">
@@ -36,6 +39,7 @@
                 foreach((get_the_category()) as $category) {
                     echo ', <a href="'.get_category_link( $category->cat_ID ).'">'.$category->cat_name.'</a>';
                     if($category->slug == 'a-decouvrir') continue;
+                    array_push($currentPostCategories, $category->cat_ID);
                 } ?>
             </p>
         </header>
@@ -83,7 +87,7 @@
             <h4 class="ug-home-title"><span>Vous aimerez aussi</span></h4>
             <div class="row">
                 <?php
-                $args = array( 'posts_per_page' => 2, 'orderby' => 'rand' );
+                $args = array( 'posts_per_page' => 2, 'orderby' => 'rand', 'category' => implode(',', $currentPostCategories) );
                 $rand_posts = get_posts( $args );
                 foreach ( $rand_posts as $post ) : setup_postdata( $post ); ?>
                 <div class="large-6 columns">
