@@ -11,8 +11,6 @@ AddType font/woff .woff
 # END REQUIRED FOR WEBFONTS
 <IfModule mod_rewrite.c>
 RewriteEngine On
-# RewriteCond %{REQUEST_URI} /gastronomie/ [NC]
-# RewriteRule ^(.*)gastronomie/(.*)$ http://urbangirl-gastronomie.fr/$2 [L,P]
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^urbangirl-actualites\.fr$ [NC]
@@ -33,6 +31,8 @@ RewriteCond %{HTTP_HOST} ^urbangirl-mode\.fr$ [NC]
 RewriteRule ^(.*)$ http://96.30.54.222/~urbangi/mode/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-beaute\.fr$ [NC]
 RewriteRule ^(.*)$ http://96.30.54.222/~urbangi/beaute/$1 [P]
+RewriteCond %{REQUEST_URI} /in-lyon/ [NC]
+RewriteRule ^(.*)in-lyon/(.*)$ http://urbangirl-sorties.fr/lyon/$2 [L,P]
 </IfModule>
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
