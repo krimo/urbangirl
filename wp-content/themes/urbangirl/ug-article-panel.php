@@ -1,7 +1,7 @@
 <article class="ug-panel">
     <ul class="ug-tag-list">
         <?php
-            $post_categories = wp_get_post_categories( $post->ID );
+            $post_categories = wp_get_post_categories( $post->ID, array('exclude' => '4029');
             foreach ($post_categories as $c) {
                 echo '<li><a href="'.get_category_link( get_cat_ID(get_category( $c )->name) ).'">'.get_category( $c )->name.'</a></li>';
             }
