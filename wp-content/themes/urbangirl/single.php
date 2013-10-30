@@ -87,13 +87,36 @@
             <h4 class="ug-home-title"><span>Vous aimerez aussi</span></h4>
             <div class="row">
                 <?php
-                $args = array( 'posts_per_page' => 2, 'orderby' => 'rand', 'category' => implode(',', $currentPostCategories) );
-                $rand_posts = get_posts( $args );
-                foreach ( $rand_posts as $post ) : setup_postdata( $post ); ?>
+                $args = array(
+                    'posts_per_page' => 2,
+                    'orderby' => 'rand',
+                    'category' => implode(',', $currentPostCategories)
+                );
+                $query = new WP_Query($args);
+                while ($query->have_posts()) : $query->the_post();
+                ?>
                 <div class="large-6 columns">
-                    <?php get_template_part('loop','ug-article-panel'); ?>
+                    <article class="ug-panel">
+                        <ul class="ug-tag-list">
+                            <?php
+                                $post_categories = wp_get_post_categories( $post->ID );
+                                foreach ($post_categories as $c) {
+                                    echo '<li><a href="'.get_category_link( get_cat_ID(get_category( $c )->name) ).'">'.get_category( $c )->name.'</a></li>';
+                                }
+                            ?>
+                        </ul>
+
+                        <div class="crop">
+                            <?php (has_post_thumbnail() && the_post_thumbnail() !== NULL) ? the_post_thumbnail() : displayBackupImage(); ?>
+                        </div>
+
+                        <footer class="ug-panel-inner">
+                            <p><em><?= 'il y a '.human_time_diff( get_the_time('U'), current_time('timestamp') ); ?></em></p>
+                            <h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
+                        </footer>
+                    </article>
                 </div>
-                <?php endforeach; wp_reset_postdata();?>
+                <?php endwhile;?>
             </div>
             <div class="row">
                 <div class="large-12 columns">
