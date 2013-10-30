@@ -477,7 +477,7 @@ function ug_category_link($link) {
     return $link;
 }
 
-add_filter('the_permalink', 'ug_permalink');
+add_filter('next_post_link', 'ug_permalink');
 function ug_permalink($link) {
 
     $sitesArray = array(
