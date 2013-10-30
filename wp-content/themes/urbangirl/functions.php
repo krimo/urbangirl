@@ -506,7 +506,6 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 add_action('init', 'ug_send_article');
 function ug_send_article() {
-    global $post;
     if (isset($_POST['ug-share-email-list'])) {
         $emailArray = explode(',', $_POST['ug-share-email-list']);
 
@@ -518,7 +517,7 @@ function ug_send_article() {
 
         $subject = $_POST['ug-share-name'].' vous recommande un article sur UrbanGirl';
 
-        $message = 'On vous recommande l\'article suivant : '.$post->post_title;
+        $message = 'On vous recommande l\'article suivant : '.$_POST['ug-share-permalink'];
 
         wp_mail(
             $cleanEmails,
@@ -536,7 +535,10 @@ function ug_send_contact_email() {
         $subject = filter_var($_POST['ug-contact-subject'], FILTER_SANITIZE_STRING);
         $headers = 'From: '.filter_var($_POST['ug-contact-name'], FILTER_SANITIZE_STRING).' <'.filter_var($_POST['ug-contact-email'], FILTER_SANITIZE_EMAIL).'>' . PHP_EOL;
         $message = filter_var($_POST['ug-contact-message'], FILTER_SANITIZE_STRING) . PHP_EOL;
-        $message .= 'Site internet : '.filter_var($_POST['ug-contact-url'], FILTER_SANITIZE_URL);
+
+        if (isset($_POST['ug-contact-url'])) {
+            $message .= 'Site internet : '.filter_var($_POST['ug-contact-url'], FILTER_SANITIZE_URL);
+        }
 
         wp_mail('contact@urbangirl.fr', $subject, $message, $headers);
     }

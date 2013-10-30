@@ -169,6 +169,7 @@
                     <small class="error">Vous n'avez pas respecté le format.</small>
                 </div>
                 <button class="button expand" type="submit">Envoyer &rarr;</button>
+                <input type="hidden" name="ug-share-permalink" value="<?php the_permalink(); ?>">
             </form>
         </div>
     </div>
