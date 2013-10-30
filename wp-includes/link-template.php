@@ -1430,7 +1430,26 @@ function get_adjacent_post_link( $format, $link, $in_same_cat = false, $excluded
 		$date = mysql2date( get_option( 'date_format' ), $post->post_date );
 		$rel = $previous ? 'prev' : 'next';
 
-		$string = '<a href="' . get_permalink( $post ) . '" rel="'.$rel.'">';
+        /** Custom Pagination Links by Krimo **/
+        $ug_link = get_permalink( $post );
+        $sitesArray = array(
+            get_bloginfo('url').'/actualites' => 'http://urbangirl-actualites.fr',
+            get_bloginfo('url').'/mode' => 'http://urbangirl-mode.fr',
+            get_bloginfo('url').'/beaute' => 'http://urbangirl-beaute.fr',
+            get_bloginfo('url').'/mariage' => 'http://urbangirl-mariage.fr',
+            get_bloginfo('url').'/maman' => 'http://urbangirl-maman.fr',
+            get_bloginfo('url').'/couple' => 'http://urbangirl-couple.fr',
+            get_bloginfo('url').'/gastronomie' => 'http://urbangirl-gastronomie.fr',
+            get_bloginfo('url').'/deco' => 'http://urbangirl-decoration.fr',
+            get_bloginfo('url').'/bonnes-adresses' => 'http://urbangirl-sorties.fr',
+            get_bloginfo('url').'/non-classe' => 'http://96.30.54.222/~urbangi/non-classe',
+        );
+
+        foreach ($sitesArray as $k => $v) {
+            $ug_link = str_replace($k, $v, $ug_link);
+        }
+
+		$string = '<a href="' . $ug_link . '" rel="'.$rel.'">';
 		$inlink = str_replace( '%title', $title, $link );
 		$inlink = str_replace( '%date', $date, $inlink );
 		$inlink = $string . $inlink . '</a>';
