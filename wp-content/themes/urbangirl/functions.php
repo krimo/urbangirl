@@ -535,7 +535,7 @@ function ug_send_contact_email() {
 
         $subject = filter_var($_POST['ug-contact-subject'], FILTER_SANITIZE_STRING);
         $headers = 'From: '.filter_var($_POST['ug-contact-name'], FILTER_SANITIZE_STRING).' <'.filter_var($_POST['ug-contact-email'], FILTER_SANITIZE_EMAIL).'>' . PHP_EOL;
-        $message = filter_var($_POST['ug-contact-message'], FILTER_SANITIZE_STRING) . '\n\n';
+        $message = filter_var($_POST['ug-contact-message'], FILTER_SANITIZE_STRING) . PHP_EOL;
         $message .= 'Site internet : '.filter_var($_POST['ug-contact-url'], FILTER_SANITIZE_URL);
 
         wp_mail('contact@urbangirl.fr', $subject, $message, $headers);
