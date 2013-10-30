@@ -130,11 +130,6 @@
         wp_clear_auth_cookie();
         header('Location:'.home_url());
     }
-
-    // Send contact email
-    if (isset($_POST['ug-contact-name'])) {
-        var_dump(wp_mail( 'krimo.hafsaoui@gmail.com', 'Un message de : '.$_POST['ug-contact-name'], $_POST['ug-contact-message']));
-    }
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>               <html class="no-js lt-ie9" lang="en" > <![endif]-->
