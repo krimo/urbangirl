@@ -338,7 +338,7 @@ function newgravatar ($avatar_defaults) {
 	return $avatar_defaults;
 }
 
-function gplus_count(){
+function gplus_count() {
 	$count = false;
 	if ($count !== false) return $count;
 	$count = 'pas de fans';
@@ -360,7 +360,7 @@ function gplus_count(){
 
 }
 
-function fb_count(){
+function fb_count() {
 	$json = json_decode(file_get_contents('http://graph.facebook.com/UrbanGirlFr'));
 
 	$count = get_transient('fb_count');
@@ -374,8 +374,7 @@ function fb_count(){
 	return $json->likes;
 }
 
-function twitter_count($screenName = 'urbangirlco')
-{
+function twitter_count($screenName = 'urbangirlco') {
     require_once('TwitterAPIExchange.php');
     // this variables can be obtained in http://dev.twitter.com/apps
     // to create the app, follow former tutorial on http://www.codeforest.net/get-twitter-follower-count
@@ -410,17 +409,17 @@ function twitter_count($screenName = 'urbangirlco')
     return $numberOfFollowers;
 }
 
-add_action( 'phpmailer_init', 'wpse8170_phpmailer_init' );
-function wpse8170_phpmailer_init( PHPMailer $phpmailer ) {
-    $phpmailer->Host = 'in.mailjet.com';
-    $phpmailer->Port = 587; // could be different
-    $phpmailer->Username = '4ce666d6783b920017e71c65c98cfb8e'; // if required
-    $phpmailer->Password = 'd6ef928ccb1c5ee2748d463fc29dc081'; // if required
-    $phpmailer->SMTPAuth = true; // if required
-    $phpmailer->SMTPSecure = 'ssl'; // enable if required, 'tls' is another possible value
+// add_action( 'phpmailer_init', 'wpse8170_phpmailer_init' );
+// function wpse8170_phpmailer_init( PHPMailer $phpmailer ) {
+//     $phpmailer->Host = 'in.mailjet.com';
+//     $phpmailer->Port = 587; // could be different
+//     $phpmailer->Username = '4ce666d6783b920017e71c65c98cfb8e'; // if required
+//     $phpmailer->Password = 'd6ef928ccb1c5ee2748d463fc29dc081'; // if required
+//     $phpmailer->SMTPAuth = true; // if required
+//     $phpmailer->SMTPSecure = 'ssl'; // enable if required, 'tls' is another possible value
 
-    $phpmailer->IsSMTP();
-}
+//     $phpmailer->IsSMTP();
+// }
 
 add_filter('post_link', 'ug_post_link');
 function ug_post_link($permalink) {
@@ -504,35 +503,6 @@ function ug_set_post_views($postID) {
 }
 //To keep the count accurate, lets get rid of prefetching
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-
-/**
- * Logs error to file
- *
- * @uses `error_log` function to log on file
- *
- * @param string $error message of the error
- * @param string $type type of the error message
- */
-function log_error( $error, $type = 'error' ) {
-    $path = dirname( __FILE__ ) . '/log.txt';
-    $msg = sprintf( "[%s][%s] %s\n", date( 'd.m.Y h:i:s' ), $type, $error );
-    error_log( $msg, 3, $path );
-}
-
-/**
- * Log the mail to text file
- *
- * @uses `wp_mail` filter
- * @param array $mail
- */
-function wedevs_mail_log( $mail ) {
-
-    $message = "to: {$mail['to']} \nsub: {$mail['subject']}, \nmsg:{$mail['message']}";
-    log_error( 'mail', $message );
-
-    return $mail;
-}
-add_filter( 'wp_mail', 'wedevs_mail_log', 10 );
 
 add_action('init', 'ug_send_article');
 function ug_send_article() {
