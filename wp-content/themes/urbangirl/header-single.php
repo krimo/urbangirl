@@ -28,19 +28,6 @@
     } else {
         $logo_slug = 'logo-alt.png';
     }
-
-    if (isset($_POST['share-this-article'])) {
-        $emailArray = explode(',', $_POST['share-this-article']);
-
-        foreach ($emailArray as $email) {
-            $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-        }
-
-        $cleanEmails = implode(',', $emailArray);
-
-        /** Add functionality to email here **/
-
-    }
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>               <html class="no-js lt-ie9" lang="en" > <![endif]-->

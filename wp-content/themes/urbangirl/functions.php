@@ -505,5 +505,24 @@ function ug_set_post_views($postID) {
 //To keep the count accurate, lets get rid of prefetching
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
+add_action('init', 'ug_send_article');
+function ug_send_article() {
+    global $post;
+    if (isset($_POST['share-this-article'])) {
+        $emailArray = explode(',', $_POST['share-this-article']);
 
+        foreach ($emailArray as $email) {
+            $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+        }
+
+        $cleanEmails = implode(',', $emailArray);
+
+        wp_mail(
+            $cleanEmails,
+            'On vous recommande un article sur UrbanGirl',
+            'On vous recommande l\'article suivant : '.$post->post_title,
+            'From: UrbanGirl <contact@urbangirl.fr>' . "\r\n"
+        );
+    }
+}
 ?>
