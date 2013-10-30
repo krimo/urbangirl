@@ -505,6 +505,35 @@ function ug_set_post_views($postID) {
 //To keep the count accurate, lets get rid of prefetching
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
+/**
+ * Logs error to file
+ *
+ * @uses `error_log` function to log on file
+ *
+ * @param string $error message of the error
+ * @param string $type type of the error message
+ */
+function log_error( $error, $type = 'error' ) {
+    $path = dirname( __FILE__ ) . '/log.txt';
+    $msg = sprintf( "[%s][%s] %s\n", date( 'd.m.Y h:i:s' ), $type, $error );
+    error_log( $msg, 3, $path );
+}
+
+/**
+ * Log the mail to text file
+ *
+ * @uses `wp_mail` filter
+ * @param array $mail
+ */
+function wedevs_mail_log( $mail ) {
+
+    $message = "to: {$mail['to']} \nsub: {$mail['subject']}, \nmsg:{$mail['message']}";
+    log_error( 'mail', $message );
+
+    return $mail;
+}
+add_filter( 'wp_mail', 'wedevs_mail_log', 10 );
+
 add_action('init', 'ug_send_article');
 function ug_send_article() {
     global $post;
@@ -521,7 +550,7 @@ function ug_send_article() {
             $cleanEmails,
             'On vous recommande un article sur UrbanGirl',
             'On vous recommande l\'article suivant : '.$post->post_title,
-            'From: UrbanGirl <contact@urbangirl.fr>' . "\r\n"
+            'From: UrbanGirl <contact@urbangirl.fr>' . PHP_EOL
         );
     }
 }
