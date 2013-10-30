@@ -1,7 +1,7 @@
 <?php get_header('category'); ?>
 <article class="row" role="main">
     <section class="large-8 columns">
-        <?= (category_description()) ? category_description() : '<p class="lead">Bienvenue sur la categorie '.single_cat_title('',false).'</p>'; ?>
+        <?= (category_description()) ? category_description() : '<p class="lead">Bienvenue sur la categorie <em>'.single_cat_title('',false).'</em></p>'; ?>
 
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <!-- post -->
