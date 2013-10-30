@@ -41,7 +41,7 @@
                                     ?>
 
                                     <div class="large-6 columns">
-                                        <?php //get_template_part('ug-article-panel'); ?>
+                                        <?php get_template_part('ug-article-panel'); ?>
                                     </div>
 
                                     <?php endwhile; ?>
