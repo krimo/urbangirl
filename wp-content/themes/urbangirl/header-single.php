@@ -23,6 +23,8 @@
     //     header("Location: $new_link");
     // }
 
+    print_r(apache_request_headers());
+
     $category_slug = get_the_category()[0]->slug;
     if (in_array($category_slug, array('beaute', 'maman'))) {
         $logo_slug = 'logo-alt-black.png';
