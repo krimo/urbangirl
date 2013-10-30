@@ -17,6 +17,8 @@
         <hr>
         <?php endwhile; ?>
         <!-- post navigation -->
+        <?php next_posts_link(); ?>
+        <?php previous_posts_link(); ?>
         <?php else: ?>
         <!-- no posts found -->
         <?php endif; ?>
