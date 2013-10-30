@@ -17,7 +17,30 @@
         <hr>
         <?php endwhile; ?>
         <!-- post navigation -->
-        <?php var_dump(get_previous_posts_link()); previous_posts_link().' — '.next_posts_link(); ?>
+        <?php
+            $prev = get_previous_posts_link();
+            $next = get_next_posts_link();
+
+            $sitesArray = array(
+                get_bloginfo('url').'/actualites' => 'http://urbangirl-actualites.fr',
+                get_bloginfo('url').'/mode' => 'http://urbangirl-mode.fr',
+                get_bloginfo('url').'/beaute' => 'http://urbangirl-beaute.fr',
+                get_bloginfo('url').'/mariage' => 'http://urbangirl-mariage.fr',
+                get_bloginfo('url').'/maman' => 'http://urbangirl-maman.fr',
+                get_bloginfo('url').'/couple' => 'http://urbangirl-couple.fr',
+                get_bloginfo('url').'/gastronomie' => 'http://urbangirl-gastronomie.fr',
+                get_bloginfo('url').'/deco' => 'http://urbangirl-decoration.fr',
+                get_bloginfo('url').'/bonnes-adresses' => 'http://urbangirl-sorties.fr',
+                get_bloginfo('url').'/non-classe' => 'http://96.30.54.222/~urbangi/non-classe',
+            );
+
+            foreach ($sitesArray as $k => $v) {
+                $prev = str_replace($k, $v, $prev);
+                $next = str_replace($k, $v, $next);
+            }
+
+            echo $prev . ' &bull; ' . $next;
+        ?>
         <?php else: ?>
         <!-- no posts found -->
         <?php endif; ?>
