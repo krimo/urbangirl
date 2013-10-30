@@ -31,8 +31,8 @@ RewriteCond %{HTTP_HOST} ^urbangirl-mode\.fr$ [NC]
 RewriteRule ^(.*)$ http://96.30.54.222/~urbangi/mode/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-beaute\.fr$ [NC]
 RewriteRule ^(.*)$ http://96.30.54.222/~urbangi/beaute/$1 [P]
-RewriteCond %{REQUEST_URI} /in-lyon/ [NC]
-RewriteRule ^(.*)in-lyon/(.*)$ http://urbangirl-sorties.fr/lyon/$2 [L,P]
+# RewriteCond %{REQUEST_URI} /in-lyon/ [NC]
+# RewriteRule ^(.*)in-lyon/(.*)$ http://urbangirl-sorties.fr/lyon/$2 [L,P]
 </IfModule>
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
