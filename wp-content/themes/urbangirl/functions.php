@@ -517,7 +517,7 @@ function ug_send_article() {
 
         $subject = $_POST['ug-share-name'].' vous recommande un article sur UrbanGirl';
 
-        $message = 'Une amie (le mail de la personne) vous recommande de lire l\'article suivant : '.$_POST['ug-share-permalink'].PHP_EOL.'Nous vous souhaitons une agréable lecture !'
+        $message = 'Une amie (le mail de la personne) vous recommande de lire l\'article suivant : '.$_POST['ug-share-permalink'].PHP_EOL.'Nous vous souhaitons une agréable lecture !';
 
         wp_mail(
             $cleanEmails,
