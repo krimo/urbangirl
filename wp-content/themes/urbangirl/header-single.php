@@ -1,5 +1,4 @@
 <?php
-    header("UG-REDIRECTED: 1");
     // $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
     // $uriArray = explode('/', $_SERVER[REQUEST_URI]);
@@ -22,8 +21,6 @@
     //     header("HTTP/1.1 301 Moved Permanently");
     //     header("Location: $new_link");
     // }
-
-    print_r(apache_request_headers());
 
     $category_slug = get_the_category()[0]->slug;
     if (in_array($category_slug, array('beaute', 'maman'))) {
