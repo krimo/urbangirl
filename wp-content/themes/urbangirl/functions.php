@@ -532,7 +532,7 @@ add_action('init', 'ug_send_contact_email');
 function ug_send_contact_email() {
     if (isset($_POST['ug-contact-name'])) {
 
-        if (isset($_POST['ug-spam'])) {
+        if (!empty($_POST['ug-spam'])) {
             echo '
                 <div data-alert class="alert-box error">
                     Une erreur est survenue, merci de ré-essayer.
