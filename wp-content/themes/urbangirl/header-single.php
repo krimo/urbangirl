@@ -28,6 +28,10 @@
     } else {
         $logo_slug = 'logo-alt.png';
     }
+
+    if (function_exists('aiosp_meta')) {
+        $desc = stripcslashes(get_post_meta($post->ID, '_aioseop_description', true));
+    }
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>               <html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -40,7 +44,7 @@
     <meta property="og:image" content="<?= (has_post_thumbnail()) ? wp_get_attachment_thumb_url(get_post_thumbnail_id()) : displayBackupImage(true); ?>" />
     <meta property="og:title" content="<?php the_title(); ?>" />
     <meta property="og:url" content="<?= get_permalink(); ?>" />
-    <meta property="og:description" content="<?php bloginfo('description'); ?>" />
+    <meta property="og:description" content="<?= $desc; ?>" />
     <meta property="og:type" content="article" />
 
     <title><?php the_title(); ?> | <?php bloginfo('name'); ?></title>
