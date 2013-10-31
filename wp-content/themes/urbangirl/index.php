@@ -64,6 +64,13 @@
 					</div>
 					<a href="#" class="swiper-nav swiper-next">&rsaquo;</a>
 				</div>
+                <hr class="home-hr">
+                <?php
+                    $q = new WP_Query(array('post_type' => 'post', 'posts_per_page' => 1));
+                    while ($q->have_posts()) : $q->the_post();
+                ?>
+                <?php get_template_part('ug-article-panel'); ?>
+                <?php endwhile; wp_reset_query(); ?>
 			</div>
             <?php if(is_user_logged_in()) { ?>
             <div class="large-4 columns">
