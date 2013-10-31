@@ -46,8 +46,6 @@
 
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <script src="<?= get_template_directory_uri().'/js/' ?>modernizr.min.js"></script>
-
-    <?php wp_head(); ?>
 </head>
 <?php
     $chooseCat = array();
