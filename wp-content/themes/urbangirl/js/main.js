@@ -212,7 +212,7 @@ $('.ug-newsletter-form').on('submit', function(e) {
     });
 });
 
-$('ug-contact-form').on('submit', function(e) {
+$('.ug-contact-form').on('submit', function(e) {
     e.preventDefault();
     var self = $(this);
     $.ajax({
