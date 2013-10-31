@@ -17,6 +17,9 @@
         'actualites' => array('Magazine d\'actualités pour les femmes','Le magazine Urbangirl Actualités propose des bons plans, bonnes adresses, actualités technologie et tout ce qui intéresse les femmes !'),
         'bonnes-adresses' => array('Guide des sorties à Paris, Lyon et Marseille','Les meilleures adresses à Paris, Lyon et Marseille sont présentées sur le magazine des sorties UrbanGirl.')
     );
+
+    $ugPageTitle = $ugMetaTable[$category_slug][0];
+    $ugMetaDesc = $ugMetaTable[$category_slug][1];
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>               <html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -25,8 +28,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title><?= $ugMetaTable[$category_slug][0]; ?> | <?php bloginfo('name'); ?></title>
-    <meta name="description" content="<?= $ugMetaTable[$category_slug][1]; ?>">
+    <title><?= $ugPageTitle; ?> | <?php bloginfo('name'); ?></title>
+    <meta name="description" content="<?= $ugMetaDesc; ?>">
 
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <script src="<?= get_template_directory_uri().'/js/' ?>modernizr.min.js"></script>
