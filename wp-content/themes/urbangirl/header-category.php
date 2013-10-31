@@ -28,13 +28,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title><?= 'Robert est ' . $ugPageTitle; ?> | <?php bloginfo('name'); ?></title>
+    <title><?= $ugPageTitle; ?> | <?php bloginfo('name'); ?></title>
     <meta name="description" content="<?= $ugMetaDesc; ?>">
 
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <script src="<?= get_template_directory_uri().'/js/' ?>modernizr.min.js"></script>
 
-    <?php wp_head(); ?>
 </head>
 
 <body class="ug-category ug-page ug-<?= is_subcategory() ? get_category(get_category(get_query_var('cat'))->parent)->slug : get_category(get_query_var('cat'))->slug; ?>">
