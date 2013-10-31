@@ -448,7 +448,7 @@ function ug_post_link($permalink) {
 
 	    $theSlug = (get_category($chooseCatId)->category_parent > 0) ? get_category(get_category($chooseCatId)->parent)->slug : get_category($chooseCatId)->slug;
 
-	    $permalink = str_replace(get_bloginfo('url').'/'.$theSlug, $sitesArray[$theSlug], $permalink);
+	    $permalink = str_replace(get_bloginfo('url').'/categorie/'.$theSlug, $sitesArray[$theSlug], $permalink);
     }
 
     return $permalink;
@@ -458,16 +458,16 @@ add_filter('category_link', 'ug_category_link');
 function ug_category_link($link) {
 
     $sitesArray = array(
-    	get_bloginfo('url').'/actualites' => 'http://urbangirl-actualites.fr',
-    	get_bloginfo('url').'/mode' => 'http://urbangirl-mode.fr',
-    	get_bloginfo('url').'/beaute' => 'http://urbangirl-beaute.fr',
-    	get_bloginfo('url').'/mariage' => 'http://urbangirl-mariage.fr',
-    	get_bloginfo('url').'/maman' => 'http://urbangirl-maman.fr',
-    	get_bloginfo('url').'/couple' => 'http://urbangirl-couple.fr',
-    	get_bloginfo('url').'/gastronomie' => 'http://urbangirl-gastronomie.fr',
-    	get_bloginfo('url').'/deco' => 'http://urbangirl-decoration.fr',
-    	get_bloginfo('url').'/bonnes-adresses' => 'http://urbangirl-sorties.fr',
-    	get_bloginfo('url').'/non-classe' => 'http://96.30.54.222/~urbangi/non-classe',
+    	get_bloginfo('url').'/categorie/actualites' => 'http://urbangirl-actualites.fr',
+    	get_bloginfo('url').'/categorie/mode' => 'http://urbangirl-mode.fr',
+    	get_bloginfo('url').'/categorie/beaute' => 'http://urbangirl-beaute.fr',
+    	get_bloginfo('url').'/categorie/mariage' => 'http://urbangirl-mariage.fr',
+    	get_bloginfo('url').'/categorie/maman' => 'http://urbangirl-maman.fr',
+    	get_bloginfo('url').'/categorie/couple' => 'http://urbangirl-couple.fr',
+    	get_bloginfo('url').'/categorie/gastronomie' => 'http://urbangirl-gastronomie.fr',
+    	get_bloginfo('url').'/categorie/deco' => 'http://urbangirl-decoration.fr',
+    	get_bloginfo('url').'/categorie/bonnes-adresses' => 'http://urbangirl-sorties.fr',
+    	get_bloginfo('url').'/categorie/non-classe' => 'http://96.30.54.222/~urbangi/non-classe',
     );
 
     foreach ($sitesArray as $k => $v) {
@@ -481,15 +481,15 @@ add_filter('preview_post_link', 'ug_preview_link');
 function ug_preview_link($link) {
 
     $sitesArray = array(
-        'http://urbangirl-actualites.fr' => get_bloginfo('url').'/actualites',
-        'http://urbangirl-mode.fr' => get_bloginfo('url').'/mode',
-        'http://urbangirl-beaute.fr' => get_bloginfo('url').'/beaute',
-        'http://urbangirl-mariage.fr' => get_bloginfo('url').'/mariage',
-        'http://urbangirl-maman.fr' => get_bloginfo('url').'/maman',
-        'http://urbangirl-couple.fr' => get_bloginfo('url').'/couple',
-        'http://urbangirl-gastronomie.fr' => get_bloginfo('url').'/gastronomie',
-        'http://urbangirl-decoration.fr' => get_bloginfo('url').'/deco',
-        'http://urbangirl-sorties.fr' => get_bloginfo('url').'/bonnes-adresses'
+        'http://urbangirl-actualites.fr' => get_bloginfo('url').'/categorie/actualites',
+        'http://urbangirl-mode.fr' => get_bloginfo('url').'/categorie/mode',
+        'http://urbangirl-beaute.fr' => get_bloginfo('url').'/categorie/beaute',
+        'http://urbangirl-mariage.fr' => get_bloginfo('url').'/categorie/mariage',
+        'http://urbangirl-maman.fr' => get_bloginfo('url').'/categorie/maman',
+        'http://urbangirl-couple.fr' => get_bloginfo('url').'/categorie/couple',
+        'http://urbangirl-gastronomie.fr' => get_bloginfo('url').'/categorie/gastronomie',
+        'http://urbangirl-decoration.fr' => get_bloginfo('url').'/categorie/deco',
+        'http://urbangirl-sorties.fr' => get_bloginfo('url').'/categorie/bonnes-adresses'
     );
 
     foreach ($sitesArray as $k => $v) {

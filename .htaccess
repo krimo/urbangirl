@@ -12,23 +12,23 @@ AddType font/woff .woff
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^urbangirl-actualites\.fr$ [NC]
-RewriteRule ^(.*)$ http://urbangirl.fr/actualites/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/categorie/actualites/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-gastronomie\.fr$ [NC]
-RewriteRule ^(.*)$ http://urbangirl.fr/gastronomie/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/categorie/gastronomie/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-couple\.fr$ [NC]
-RewriteRule ^(.*)$ http://urbangirl.fr/couple/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/categorie/couple/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-maman\.fr$ [NC]
-RewriteRule ^(.*)$ http://urbangirl.fr/maman/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/categorie/maman/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-decoration\.fr$ [NC]
-RewriteRule ^(.*)$ http://urbangirl.fr/deco/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/categorie/deco/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-mariage\.fr$ [NC]
-RewriteRule ^(.*)$ http://urbangirl.fr/mariage/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/categorie/mariage/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-sorties\.fr$ [NC]
-RewriteRule ^(.*)$ http://urbangirl.fr/bonnes-adresses/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/categorie/bonnes-adresses/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-mode\.fr$ [NC]
-RewriteRule ^(.*)$ http://urbangirl.fr/mode/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/categorie/mode/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-beaute\.fr$ [NC]
-RewriteRule ^(.*)$ http://urbangirl.fr/beaute/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/categorie/beaute/$1 [P]
 </IfModule>
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
