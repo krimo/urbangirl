@@ -11,28 +11,28 @@
 			</div>
 			<div class="large-5 columns">
 				<h4 class="ug-home-title"><span>Articles du jour</span></h4>
-					<?php
-						$args = array(
-							'post_type' => 'post',
-                            'include' => $categories_to_display,
-							'posts_per_page' => 3
-						);
-						$query = new WP_Query($args);
-						$i = 1;
-						while ($query->have_posts()) : $query->the_post();
-					?>
-                    <?php get_template_part('ug-article-panel'); ?>
-					<?php if ($i !== 3) { ?>
-					<hr>
-					<?php } $i++; ?>
-					<?php endwhile; ?>
+				<?php
+					$args = array(
+						'post_type' => 'post',
+                        'include' => $categories_to_display,
+						'posts_per_page' => 3
+					);
+					$query = new WP_Query($args);
+					$i = 1;
+					while ($query->have_posts()) : $query->the_post();
+				?>
+                <?php get_template_part('ug-article-panel'); ?>
+				<?php if ($i !== 3) { ?>
+				<hr>
+				<?php } $i++; ?>
+				<?php endwhile; ?>
 			</div>
 		</section>
 		<hr class="home-hr">
 		<?php } ?>
 
 		<section class="home-section row" id="custom-content-begin">
-			<div class="large-12 columns">
+			<div class="<?= (is_user_logged_in()) 'large-8' : 'large-12'; ?> columns">
 				<h3 class="ug-home-title"><span>Les Articles les Plus Lus</span></h3>
 				<div class="swiper-outer">
 					<a href="#" class="swiper-nav swiper-prev">&lsaquo;</a>
@@ -65,6 +65,26 @@
 					<a href="#" class="swiper-nav swiper-next">&rsaquo;</a>
 				</div>
 			</div>
+            <?php if(is_user_logged_in()) { ?>
+            <div class="large-4 columns">
+                <h4 class="ug-home-title"><span>Articles du jour</span></h4>
+                <?php
+                    $args = array(
+                        'post_type' => 'post',
+                        'include' => $categories_to_display,
+                        'posts_per_page' => 3
+                    );
+                    $query = new WP_Query($args);
+                    $i = 1;
+                    while ($query->have_posts()) : $query->the_post();
+                ?>
+                <?php get_template_part('ug-article-panel'); ?>
+                <?php if ($i !== 3) { ?>
+                <hr>
+                <?php } $i++; ?>
+                <?php endwhile; ?>
+            </div>
+            <?php } ?>
 		</section>
 
 		<hr class="home-hr">
