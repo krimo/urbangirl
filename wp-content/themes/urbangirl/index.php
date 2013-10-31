@@ -64,6 +64,7 @@
 					</div>
 					<a href="#" class="swiper-nav swiper-next">&rsaquo;</a>
 				</div>
+                <?php if(is_user_logged_in()) { ?>
                 <hr class="home-hr">
                 <?php
                     // Create a new filtering function that will add our where clause to the query
@@ -78,6 +79,7 @@
                 ?>
                 <?php get_template_part('ug-article-panel'); ?>
                 <?php endwhile; wp_reset_query(); ?>
+                <?php } ?>
 			</div>
             <?php if(is_user_logged_in()) { ?>
             <div class="large-4 columns">
