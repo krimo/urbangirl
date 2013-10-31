@@ -37,7 +37,7 @@
             $prev = str_replace('<a', '<a class="button secondary"', $prev);
             $next = str_replace('<a', '<a class="button secondary"', $next);
 
-            echo $prev . ' &nbsb; ' . $next;
+            echo $prev . ' &nbsp; ' . $next;
         ?>
         <?php else: ?>
         <!-- no posts found -->
