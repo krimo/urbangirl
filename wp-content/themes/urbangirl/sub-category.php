@@ -3,16 +3,12 @@
     <section class="large-8 columns">
         <?= (category_description()) ? category_description() : '<p class="lead">Bienvenue sur la categorie <em>'.single_cat_title('',false).'</em></p>'; ?>
 
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <?php
+            query_posts( 'posts_per_page=15' );
+            if ( have_posts() ) : while ( have_posts() ) : the_post();
+        ?>
         <!-- post -->
-        <article class="clearfix ug-subcategory-article">
-        	<div class="crop left">
-	            <a href="<?php the_permalink(); ?>" class="picture">
-	                <?php (has_post_thumbnail() && the_post_thumbnail() !== NULL) ? the_post_thumbnail() : displayBackupImage(); ?>
-	            </a>
-            </div>
-            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <br><small>publié il y a <em><?= human_time_diff( get_the_time('U'), current_time('timestamp') ); ?></em></small></h3>
-        </article>
+        <?php get_template_part('ug-subcat-article'); ?>
         <hr>
         <?php endwhile; ?>
         <!-- post navigation -->
@@ -38,7 +34,10 @@
                 $next = str_replace($k, $v, $next);
             }
 
-            echo $prev . ' &bull; ' . $next;
+            $prev = str_replace('<a', '<a class="button secondary"', $prev);
+            $next = str_replace('<a', '<a class="button secondary"', $next);
+
+            echo $prev . ' &nbsb; ' . $next;
         ?>
         <?php else: ?>
         <!-- no posts found -->

@@ -105,10 +105,10 @@
                 <?php get_template_part( 'ug-personalize' ); ?>
             </div>
             <div class="large-6 columns">
-                <h4>Retrouvez vos preferences</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, necessitatibus, vel quas laborum maxime inventore dolore esse sint quis eaque sed recusandae accusantium ratione voluptate porro illum minus facilis dolores.</p>
+                <h4>Personnalisez votre navigation</h4>
+                <p>Vous avez la possibilité de personnaliser votre navigation afin que nous vous proposions dès votre connexion les articles suscpetibles de vous intéresser. A tout moment, vous pouvez <a href="#" class="zero-out">remettre à zéro</a> vos paramètres de navigation afin de les annuler. N'oubliez pas de vous abonner à notre newsletter !</p>
                 <hr>
-                <h4>Inscrivez-vous a notre newsletter</h4>
+                <h4>Inscrivez-vous à notre newsletter</h4>
                 <form action="#" class="custom" data-abide>
                     <input type="text" placeholder="Votre adresse email">
                     <select name="city" id="city">
