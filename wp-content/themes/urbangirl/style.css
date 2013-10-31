@@ -5827,17 +5827,16 @@ hr.home-hr:after {
 .panel-paragraph {
     margin-bottom:0
 }
-.ug-social-list li p {
-    text-align:center
-}
+
 .social-link {
     font-size:3em;
+    line-height: 1;
     color:#222
 }
 .social-link:hover {
     color:#ee145b
 }
-.social-link+p {
+.social-link + p {
     margin-bottom:0
 }
 body.gastronomy {
