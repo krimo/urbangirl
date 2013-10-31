@@ -40,12 +40,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="<?php bloginfo('description'); ?>">
-    <meta property="og:image" content="<?= (has_post_thumbnail()) ? wp_get_attachment_thumb_url(get_post_thumbnail_id()) : displayBackupImage(true); ?>" />
-    <meta property="og:title" content="<?php the_title(); ?>" />
-    <meta property="og:url" content="<?= get_permalink(); ?>" />
-    <meta property="og:description" content="<?= $desc; ?>" />
-    <meta property="og:type" content="article" />
 
     <title><?php the_title(); ?> | <?php bloginfo('name'); ?></title>
 
