@@ -557,6 +557,7 @@ function ug_send_contact_email() {
                 </div>
             ';
         }
+        exit(0);
     }
 }
 
