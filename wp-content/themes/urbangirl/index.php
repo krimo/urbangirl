@@ -66,7 +66,14 @@
 				</div>
                 <hr class="home-hr">
                 <?php
-                    $q = new WP_Query(array('post_type' => 'post', 'posts_per_page' => 1));
+                    // Create a new filtering function that will add our where clause to the query
+                    function filter_where( $where = '' ) {
+                        $where .= " AND post_date >= '2013-08-01'";
+                        return $where;
+                    }
+                    add_filter( 'posts_where', 'filter_where' );
+                    $q = new WP_Query(array('post_type' => 'post', 'posts_per_page' => 1, 'orderby' => 'rand'));
+                    remove_filter( 'posts_where', 'filter_where' );
                     while ($q->have_posts()) : $q->the_post();
                 ?>
                 <?php get_template_part('ug-article-panel'); ?>
