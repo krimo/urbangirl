@@ -52,7 +52,7 @@
         <li>
             <?php get_template_part('ug-article-small'); ?>
         </li>
-        <?php endwhile; ?>
+        <?php endwhile; wp_reset_query();?>
     </ul>
     <hr>
     <img src="http://dummyimage.com/300x300/222/ffffff.png&text=votre+pub+ici" alt="">
