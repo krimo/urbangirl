@@ -47,7 +47,7 @@
                         <li class="ug-category-subnav-title"><h5><?= (!is_subcategory()) ? get_category(get_query_var('cat'))->name : get_category(get_category(get_query_var('cat'))->parent)->name; ?> :</h5></li>
                         <?php
                             if (!is_subcategory()) {
-                                foreach (get_categories('child_of='.get_category(get_query_var('cat'))->cat_ID.'&hide_empty=0') as $cat) {
+                                foreach (get_categories('child_of='.get_category(get_query_var('cat'))->cat_ID) as $cat) {
                                     echo '<li><a href="'.get_category_link( $cat->cat_ID ).'">'.$cat->name.'</a></li>';
                                 }
                             } else {
