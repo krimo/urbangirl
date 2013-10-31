@@ -34,7 +34,9 @@
             <h1><?php the_title(); ?></h1>
             <p class="ug-article-meta">
                 <em>par</em> <?= ucfirst(get_the_author()); ?>
+                <?php if (!is_old_post()) { ?>
                 <em>il y a</em> <?= human_time_diff( get_the_time('U'), current_time('timestamp') ); ?>
+                <?php } ?>
                 <?php
                 foreach((get_the_category()) as $category) {
                     echo ', <a href="'.get_category_link( $category->cat_ID ).'">'.$category->cat_name.'</a>';
