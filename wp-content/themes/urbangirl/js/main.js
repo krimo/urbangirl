@@ -220,6 +220,7 @@ $('ug-contact-form').on('submit', function(e) {
         url: location.href,
         data: self.serialize(),
         success: function(data) {
+            console.log(data);
             self.append(data);
         }
     });
