@@ -212,25 +212,27 @@ $('.ug-newsletter-form').on('submit', function(e) {
     });
 });
 
-$('.ug-contact-form').on('submit', function(e) {
-    e.preventDefault();
+$('.ug-contact-form').on('valid', function() {
+    $('.ug-contact-form').on('submit', function(e) {
+        e.preventDefault();
 
-    var self = $(this),
-        btn = $('.ug-contact-form button'),
-        btnTxt = btn.text();
+        var self = $(this),
+            btn = $('.ug-contact-form button'),
+            btnTxt = btn.text();
 
-    $.ajax({
-        method: "POST",
-        url: location.href,
-        data: self.serialize(),
-        beforeSend: function() {
-            btn.prop('disabled', true).text('Envoi en cours...');
-        },
-        success: function(data) {
-            self.append(data);
-            self[0].reset();
-            btn.prop('disabled', false).text(btnTxt);
-        }
+        $.ajax({
+            method: "POST",
+            url: location.href,
+            data: self.serialize(),
+            beforeSend: function() {
+                btn.prop('disabled', true).text('Envoi en cours...');
+            },
+            success: function(data) {
+                self.append(data);
+                self[0].reset();
+                btn.prop('disabled', false).text(btnTxt);
+            }
+        });
     });
 });
 

@@ -6439,9 +6439,11 @@ body.gastronomy .category-title {
         left:3xpx
     }
 }
+
 .ug-article-meta em {
     color:#a5a5a5;
 }
+
 .ug-panel:not(.bottom-page-prompt) .crop img {
     min-height: 200px;
 }
@@ -6454,4 +6456,8 @@ body.gastronomy .category-title {
 
 .muted {
     color:#aaa;
+}
+
+.ug-alert-box {
+    font-weight: 300;
 }

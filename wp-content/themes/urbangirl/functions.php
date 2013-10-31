@@ -554,14 +554,14 @@ function ug_send_contact_email() {
 
         if ($sentEmail) {
             echo '
-                <div data-alert class="alert-box success">
+                <div data-alert class="ug-alert-box alert-box success">
                     Votre message a bien été envoyé.
                     <a href="#" class="close">&times;</a>
                 </div>
             ';
         } else {
             echo '
-                <div data-alert class="alert-box error">
+                <div data-alert class="ug-alert-box alert-box error">
                     Une erreur est survenue, merci de ré-essayer.
                     <a href="#" class="close">&times;</a>
                 </div>
