@@ -543,14 +543,14 @@ function ug_send_contact_email() {
         $sentEmail = wp_mail('contact@urbangirl.fr', $subject, $message, $headers);
 
         if ($sentEmail) {
-            echo '
+            return '
                 <div data-alert class="alert-box success">
                     Votre message a bien été envoyé.
                     <a href="#" class="close">&times;</a>
                 </div>
             ';
         } else {
-            echo '
+            return '
                 <div data-alert class="alert-box error">
                     Une erreur est survenue, merci de ré-essayer.
                     <a href="#" class="close">&times;</a>
