@@ -4,13 +4,15 @@
         <?= (category_description()) ? category_description() : '<p class="lead">Bienvenue sur la categorie <em>'.single_cat_title('',false).'</em></p>'; ?>
 
         <?php
-            // query_posts('posts_per_page=15&cat='.get_query_var('cat').'&paged='.$paged);
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+            query_posts('posts_per_page=15&cat='.get_query_var('cat').'&paged='.$paged);
             if ( have_posts() ) : while ( have_posts() ) : the_post();
         ?>
         <!-- post -->
         <?php get_template_part('ug-subcat-article'); ?>
         <hr>
-        <?php endwhile; ?>
+        <?php endwhile; wp_reset_query(); ?>
         <!-- post navigation -->
         <?php
             $prev = get_previous_posts_link();
