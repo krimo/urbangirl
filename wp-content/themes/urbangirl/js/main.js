@@ -212,30 +212,31 @@ $('.ug-newsletter-form').on('submit', function(e) {
     });
 });
 
-    $('.ug-contact-form').on('submit', function(e) {
-        e.preventDefault();
+$('.ug-contact-form').on('submit', function(e) {
+    e.preventDefault();
 
-        var self = $(this),
-            btn = $('.ug-contact-form button'),
-            btnTxt = btn.text(),
-            invalidFields = self.find('[data-invalid]');
+    var self = $(this),
+        btn = $('.ug-contact-form button'),
+        btnTxt = btn.text(),
+        invalidFields = self.find('[data-invalid]'),
+        messageHolders = $('.ajax-message');
 
-        if (invalidFields.length < 1) {
-            $.ajax({
-                method: "POST",
-                url: location.href,
-                data: self.serialize(),
-                beforeSend: function() {
-                    btn.prop('disabled', true).text('Envoi en cours...');
-                },
-                success: function(data) {
-                    self.append(data);
-                    self[0].reset();
-                    btn.prop('disabled', false).text(btnTxt);
-                }
-            });
-        }
-    });
+    if (invalidFields.length < 1) {
+        $.ajax({
+            method: "POST",
+            url: location.href,
+            data: self.serialize(),
+            beforeSend: function() {
+                btn.prop('disabled', true).text('Envoi en cours...');
+            },
+            success: function(data) {
+                messageHolders.append(data);
+                self[0].reset();
+                btn.prop('disabled', false).text(btnTxt);
+            }
+        });
+    }
+});
 /**
  * Enregistrement du formulaire de personalisation
  */

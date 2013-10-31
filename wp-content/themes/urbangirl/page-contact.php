@@ -10,6 +10,8 @@
 		<p class="lead">Pas de contenu.</p>
 		<?php endif; ?>
 
+        <div class="ajax-message"></div>
+
 		<form data-abide class="ug-contact-form" method="post" action="#">
 			<div class="name-field">
 				<label>Nom complet <small>obligatoire</small></label>
@@ -44,6 +46,7 @@
 			</div>
 			<button type="submit">Envoyer &rarr;</button>
             <input type="text" name="ug-spam" style="display:none;">
+            <div class="ajax-message"></div>
 		</form>
 	</section>
 	<section class="large-4 columns">
