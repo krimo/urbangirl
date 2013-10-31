@@ -448,7 +448,7 @@ function ug_post_link($permalink) {
 
 	    $theSlug = (get_category($chooseCatId)->category_parent > 0) ? get_category(get_category($chooseCatId)->parent)->slug : get_category($chooseCatId)->slug;
 
-	    $permalink = str_replace(get_bloginfo('url').'/categorie/'.$theSlug, $sitesArray[$theSlug], $permalink);
+	    $permalink = str_replace(get_bloginfo('url').'/'.$theSlug, $sitesArray[$theSlug], $permalink);
     }
 
     return $permalink;
