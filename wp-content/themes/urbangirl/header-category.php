@@ -6,20 +6,20 @@
         $logo_slug = 'logo-alt.png';
     }
 
-    // $ugMetaTable = array(
-    //     'mode' => array('Magazine mode féminin','urbangirl-mode.fr est le magazine féminin dédié à la mode et au prêt-à-porter: conseils, astuces look, on vous dit tout !'),
-    //     'beaute' => array('Magazine beauté féminin','Le magazine beauté dédié aux soins beauté, au sport, au bien-être, aux astuces make up et tout ce qui intéresse les femmes !'),
-    //     'gastronomie' => array('Magazine gastronomie vin et cocktails','Le magazine Urban Girl dédié à la gastronomie et aux recettes tendances présente quotidiennement des articles sur les meilleurs produits et les recettes de coktails du moment'),
-    //     'deco' => array('Magazine de décoration d\'intérieur','Le magazine Urban Girl spécialisé dans l\'aménagement intérieur et extérieur propose chaque jour des articles sur la décoration et les tendances du moment'),
-    //     'maman' => array('Magazine maman et enfants','Le magazine Maman Urban Girl propose des articles pour les mamans et futures mamans: grossesses, bébé, enfants et adolescents'),
-    //     'mariage' => array('Magazine mariage','Le magazine mariage Urban Girl s\'adresse aux futures mariées à la recherche d\'informations pour l\'organisation du mariage, les tendances robes et accessoires, et toutes les actus mariage'),
-    //     'couple' => array('Magazine couple séduction et amour','Le magazine Urban Girl dédié au couple propose chaque semaine des conseils pour les relations de couple mais aussi pour les célibataires'),
-    //     'actualites' => array('Magazine d\'actualités pour les femmes','Le magazine Urbangirl Actualités propose des bons plans, bonnes adresses, actualités technologie et tout ce qui intéresse les femmes !'),
-    //     'bonnes-adresses' => array('Guide des sorties à Paris, Lyon et Marseille','Les meilleures adresses à Paris, Lyon et Marseille sont présentées sur le magazine des sorties UrbanGirl.')
-    // );
+    $ugMetaTable = array(
+        'mode' => array('Magazine mode féminin','urbangirl-mode.fr est le magazine féminin dédié à la mode et au prêt-à-porter: conseils, astuces look, on vous dit tout !'),
+        'beaute' => array('Magazine beauté féminin','Le magazine beauté dédié aux soins beauté, au sport, au bien-être, aux astuces make up et tout ce qui intéresse les femmes !'),
+        'gastronomie' => array('Magazine gastronomie vin et cocktails','Le magazine Urban Girl dédié à la gastronomie et aux recettes tendances présente quotidiennement des articles sur les meilleurs produits et les recettes de coktails du moment'),
+        'deco' => array('Magazine de décoration d\'intérieur','Le magazine Urban Girl spécialisé dans l\'aménagement intérieur et extérieur propose chaque jour des articles sur la décoration et les tendances du moment'),
+        'maman' => array('Magazine maman et enfants','Le magazine Maman Urban Girl propose des articles pour les mamans et futures mamans: grossesses, bébé, enfants et adolescents'),
+        'mariage' => array('Magazine mariage','Le magazine mariage Urban Girl s\'adresse aux futures mariées à la recherche d\'informations pour l\'organisation du mariage, les tendances robes et accessoires, et toutes les actus mariage'),
+        'couple' => array('Magazine couple séduction et amour','Le magazine Urban Girl dédié au couple propose chaque semaine des conseils pour les relations de couple mais aussi pour les célibataires'),
+        'actualites' => array('Magazine d\'actualités pour les femmes','Le magazine Urbangirl Actualités propose des bons plans, bonnes adresses, actualités technologie et tout ce qui intéresse les femmes !'),
+        'bonnes-adresses' => array('Guide des sorties à Paris, Lyon et Marseille','Les meilleures adresses à Paris, Lyon et Marseille sont présentées sur le magazine des sorties UrbanGirl.')
+    );
 
-    // $ugPageTitle = $ugMetaTable[$category_slug][0];
-    // $ugMetaDesc = $ugMetaTable[$category_slug][1];
+    $ugPageTitle = $ugMetaTable[$category_slug][0];
+    $ugMetaDesc = $ugMetaTable[$category_slug][1];
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>               <html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -29,11 +29,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title><?php single_cat_title(); ?> | <?php bloginfo('name'); ?></title>
+    <meta name="description" content="<?= $ugMetaDesc; ?>">
 
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <script src="<?= get_template_directory_uri().'/js/' ?>modernizr.min.js"></script>
 
-    <?php wp_head(); ?>
 </head>
 
 <body class="ug-category ug-page ug-<?= is_subcategory() ? get_category(get_category(get_query_var('cat'))->parent)->slug : get_category(get_query_var('cat'))->slug; ?>">

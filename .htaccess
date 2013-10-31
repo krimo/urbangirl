@@ -11,36 +11,32 @@ AddType font/woff .woff
 # END REQUIRED FOR WEBFONTS
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^urbangirl-actualites\.fr$ [NC]
-RewriteRule ^(.*)$ http://96.30.54.222/~urbangi/actualites/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/actualites/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-gastronomie\.fr$ [NC]
-RewriteRule ^(.*)$ http://96.30.54.222/~urbangi/gastronomie/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/gastronomie/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-couple\.fr$ [NC]
-RewriteRule ^(.*)$ http://96.30.54.222/~urbangi/couple/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/couple/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-maman\.fr$ [NC]
-RewriteRule ^(.*)$ http://96.30.54.222/~urbangi/maman/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/maman/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-decoration\.fr$ [NC]
-RewriteRule ^(.*)$ http://96.30.54.222/~urbangi/deco/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/deco/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-mariage\.fr$ [NC]
-RewriteRule ^(.*)$ http://96.30.54.222/~urbangi/mariage/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/mariage/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-sorties\.fr$ [NC]
-RewriteRule ^(.*)$ http://96.30.54.222/~urbangi/bonnes-adresses/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/bonnes-adresses/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-mode\.fr$ [NC]
-RewriteRule ^(.*)$ http://96.30.54.222/~urbangi/mode/$1 [P]
+RewriteRule ^(.*)$ http://urbangirl.fr/mode/$1 [P]
 RewriteCond %{HTTP_HOST} ^urbangirl-beaute\.fr$ [NC]
-RewriteRule ^(.*)$ http://96.30.54.222/~urbangi/beaute/$1 [P]
-# RewriteCond %{REQUEST_URI} /in-lyon/ [NC]
-# RewriteRule ^(.*)in-lyon/(.*)$ http://urbangirl-sorties.fr/lyon/$2 [L,P]
+RewriteRule ^(.*)$ http://urbangirl.fr/beaute/$1 [P]
 </IfModule>
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /~urbangi/
+RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /~urbangi/index.php [L]
+RewriteRule . /index.php [L]
 </IfModule>
 # END WordPress
