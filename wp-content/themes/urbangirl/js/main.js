@@ -212,6 +212,19 @@ $('.ug-newsletter-form').on('submit', function(e) {
     });
 });
 
+$('ug-contact-form').on('submit', function(e) {
+    e.preventDefault();
+    var self = $(this);
+    $.ajax({
+        method: "POST",
+        url: location.href,
+        data: self.serialize(),
+        success: function(data) {
+            self.append(data);
+        }
+    });
+});
+
 /**
  * Enregistrement du formulaire de personalisation
  */

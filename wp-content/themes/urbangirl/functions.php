@@ -540,7 +540,23 @@ function ug_send_contact_email() {
             $message .= 'Site internet : '.filter_var($_POST['ug-contact-url'], FILTER_SANITIZE_URL);
         }
 
-        wp_mail('contact@urbangirl.fr', $subject, $message, $headers);
+        $sentEmail = wp_mail('contact@urbangirl.fr', $subject, $message, $headers);
+
+        if ($sentEmail) {
+            echo '
+                <div data-alert class="alert-box success">
+                    Votre message a bien été envoyé.
+                    <a href="#" class="close">&times;</a>
+                </div>
+            ';
+        } else {
+            echo '
+                <div data-alert class="alert-box error">
+                    Une erreur est survenue, merci de ré-essayer.
+                    <a href="#" class="close">&times;</a>
+                </div>
+            ';
+        }
     }
 }
 

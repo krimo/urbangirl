@@ -43,6 +43,7 @@
 				<small class="error">Merci de remplir votre message !</small>
 			</div>
 			<button type="submit">Envoyer &rarr;</button>
+            <input type="text" name="ug-spam" style="display:none;">
 		</form>
 	</section>
 	<section class="large-4 columns">
