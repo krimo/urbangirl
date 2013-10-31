@@ -73,9 +73,7 @@
 
 		$categories = (isset($categories_to_display) && $categories_to_display !== 'all') ? get_categories('include='.$categories_to_display.'&exclude=4029') : get_categories('exclude=4029');
 
-		var_dump($categories_to_display);
-
-		foreach ($categories as $cat) { if ($cat->count >= 4 && $cat->parent == '0') { ?>
+		foreach ($categories as $cat) { if ($cat->count >= 4 && ($cat->parent == '0' || $cat->cat_ID == '661')) { ?>
 		<section class="home-section row">
 			<div class="large-12 columns">
 				<h3 class="ug-home-title"><span><a href="<?= get_category_link($cat); ?>"><?= (is_user_logged_in()) ? 'Vos articles '.$cat->name : $cat->name;?></a></span></h3>
