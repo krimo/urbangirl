@@ -30,9 +30,9 @@
 
             $t = explode(',', $categories_to_display);
 
-            if (sizeof($t) <= 2) {
-                $categories_to_display .= ',53,15';
-            }
+            // if (sizeof($t) <= 2) {
+            //     $categories_to_display .= ',53,15';
+            // }
         } else {
             $categories_to_display = 'all';
         }
