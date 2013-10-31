@@ -532,6 +532,16 @@ add_action('init', 'ug_send_contact_email');
 function ug_send_contact_email() {
     if (isset($_POST['ug-contact-name'])) {
 
+        if (isset($_POST['ug-spam'])) {
+            echo '
+                <div data-alert class="alert-box error">
+                    Une erreur est survenue, merci de ré-essayer.
+                    <a href="#" class="close">&times;</a>
+                </div>
+            ';
+            exit(0);
+        }
+
         $subject = filter_var($_POST['ug-contact-subject'], FILTER_SANITIZE_STRING);
         $headers = 'From: '.filter_var($_POST['ug-contact-name'], FILTER_SANITIZE_STRING).' <'.filter_var($_POST['ug-contact-email'], FILTER_SANITIZE_EMAIL).'>' . PHP_EOL;
         $message = filter_var($_POST['ug-contact-message'], FILTER_SANITIZE_STRING) . PHP_EOL;
