@@ -32,7 +32,7 @@
 		<?php } ?>
 
 		<section class="home-section row" id="custom-content-begin">
-			<div class="<?= (is_user_logged_in()) 'large-8' : 'large-12'; ?> columns">
+			<div class="<?= (is_user_logged_in()) ? 'large-8' : 'large-12'; ?> columns">
 				<h3 class="ug-home-title"><span>Les Articles les Plus Lus</span></h3>
 				<div class="swiper-outer">
 					<a href="#" class="swiper-nav swiper-prev">&lsaquo;</a>
