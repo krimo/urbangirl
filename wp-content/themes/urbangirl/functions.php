@@ -477,6 +477,29 @@ function ug_category_link($link) {
     return $link;
 }
 
+add_filter('preview_post_link', 'ug_preview_link');
+function ug_preview_link($link) {
+
+    $sitesArray = array(
+        get_bloginfo('url').'/actualites' => 'http://urbangirl-actualites.fr',
+        get_bloginfo('url').'/mode' => 'http://urbangirl-mode.fr',
+        get_bloginfo('url').'/beaute' => 'http://urbangirl-beaute.fr',
+        get_bloginfo('url').'/mariage' => 'http://urbangirl-mariage.fr',
+        get_bloginfo('url').'/maman' => 'http://urbangirl-maman.fr',
+        get_bloginfo('url').'/couple' => 'http://urbangirl-couple.fr',
+        get_bloginfo('url').'/gastronomie' => 'http://urbangirl-gastronomie.fr',
+        get_bloginfo('url').'/deco' => 'http://urbangirl-decoration.fr',
+        get_bloginfo('url').'/bonnes-adresses' => 'http://urbangirl-sorties.fr',
+        get_bloginfo('url').'/non-classe' => get_bloginfo('url').'/non-classe',
+    );
+
+    foreach ($sitesArray as $k => $v) {
+        $link = str_replace($k, $v, $link);
+    }
+
+    return $link;
+}
+
 function wpb_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'La sidebar', 'wpb' ),
