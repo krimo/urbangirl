@@ -4,8 +4,7 @@
         <?= (category_description()) ? category_description() : '<p class="lead">Bienvenue sur la categorie <em>'.single_cat_title('',false).'</em></p>'; ?>
 
         <?php
-            query_posts($query_string . '&posts_per_page=15');
-            // query_posts('posts_per_page=15&cat='.get_query_var('cat'));
+            query_posts('posts_per_page=15&cat='.get_query_var('cat').'&paged='.$paged);
             if ( have_posts() ) : while ( have_posts() ) : the_post();
         ?>
         <!-- post -->
