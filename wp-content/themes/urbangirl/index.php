@@ -73,6 +73,8 @@
 
 		$categories = (isset($categories_to_display) && $categories_to_display !== 'all') ? get_categories('include='.$categories_to_display.'&exclude=4029') : get_categories('exclude=4029');
 
+		var_dump($categories_to_display);
+
 		foreach ($categories as $cat) { if ($cat->count >= 4 && $cat->parent == '0') { ?>
 		<section class="home-section row">
 			<div class="large-12 columns">
