@@ -4,8 +4,8 @@
         <?= (category_description()) ? category_description() : '<p class="lead">Bienvenue sur la categorie <em>'.single_cat_title('',false).'</em></p>'; ?>
 
         <?php
-            var_dump($wp_query->get_queried_object_id());
-            $catId = $wp_query->get_queried_object_id();
+            var_dump(get_query_var('cat'));
+            $catId = 6;
             query_posts('posts_per_page=15&cat='.$catId);
             if ( have_posts() ) : while ( have_posts() ) : the_post();
         ?>
