@@ -228,7 +228,7 @@ $('.ug-contact-form').on('submit', function(e) {
         },
         success: function(data) {
             self.append(data);
-            self.[0].reset();
+            self[0].reset();
             btn.prop('disabled', false).text(btnTxt);
         }
     });
