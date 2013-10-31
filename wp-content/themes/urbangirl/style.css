@@ -5827,7 +5827,9 @@ hr.home-hr:after {
 .panel-paragraph {
     margin-bottom:0
 }
-
+.ug-social-list > li {
+    padding-bottom: 0;
+}
 .social-link {
     font-size:3em;
     line-height: 1;

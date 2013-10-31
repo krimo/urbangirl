@@ -21,7 +21,7 @@
 	<a href="http://journalduluxe.fr"><img src="<?= get_template_directory_uri() . '/images/pub.jpg' ?>" alt="Le Journal du Luxe"></a>
 	<?php (is_active_sidebar('sidebar-1')) ? dynamic_sidebar( 'sidebar-1' ) : ''; ?>
 	<hr>
-	<h4>Suivez UrbanGirl</h4>
+	<h4 class="text-center">Suivez UrbanGirl</h4>
 	<ul class="small-block-grid-3 ug-social-list text-center">
 		<li>
 			<a href="https://twitter.com/intent/user?screen_name=urbangirlco" class="social-link icon-twitter"></a>
