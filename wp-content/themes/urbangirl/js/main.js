@@ -12,66 +12,6 @@ if (menuClass) {
     new cbpHorizontalSlideOutMenu(menuClass);
 }
 
-imagesLoaded( document.querySelector('.swiper-container'), function() {
-
-    var mySwiper = $('.swiper-container').swiper({
-        mode:'horizontal',
-        loop: true,
-        calculateHeight: true,
-        slidesPerView: slidesnumber
-    });
-
-    $('.swiper-nav').on('click', function(e) {
-        e.preventDefault();
-
-        if ($(this).is('.swiper-next')) {
-            mySwiper.swipeNext();
-        } else {
-            mySwiper.swipePrev();
-        }
-    });
-
-});
-
-if ($.cookie('ug_preferences') && $('#authentication').text() == '0' && !$.cookie('categoriesShown')) {
-    $('html,body').animate({scrollTop:$('#custom-content-begin').offset().top}, 500);
-    $.cookie("categoriesShown", 1);
-}
-
-$('.ug-menu-toggle').on('click', function() {
-    $('.cbp-hsmenu-wrapper').toggleClass('open');
-});
-
-
-var ugCheckbox = document.querySelectorAll('.ug-switch-btn'),
-    i=0;
-
-$.each(ugCheckbox, function() {
-    i++;
-
-    var mySwitch = new Switch(this),
-        eventType = ( !mobilecheck() ) ? 'click' : 'touchstart';
-
-    mySwitch.el.addEventListener(eventType, function(e){
-        e.preventDefault();
-        mySwitch.toggle();
-    }, false);
-
-    if (i === 1 && !$.cookie('ug_preferences') && $('#authentication').text() == '0') {
-        mySwitch.toggle();
-    }
-});
-
-$('.zero-out').on('click', function(e) {
-    e.preventDefault();
-
-    $.each(ugCheckbox, function() {
-        if (this.checked) {
-            $('input[name='+this.name+']').parent().find('.ios-switch').click();
-        }
-    });
-});
-
 $.fn.isOnScreen = function(){
 
     var win = $(window);
@@ -119,6 +59,69 @@ $(window).scroll(function() {
     //         hasHellocotonLoaded = true;
     //     }
     // }
+});
+
+
+if (document.querySelector('.swiper-container')) {   
+    imagesLoaded( document.querySelector('.swiper-container'), function() {
+
+        var mySwiper = $('.swiper-container').swiper({
+            mode:'horizontal',
+            loop: true,
+            calculateHeight: true,
+            slidesPerView: slidesnumber
+        });
+
+        $('.swiper-nav').on('click', function(e) {
+            e.preventDefault();
+
+            if ($(this).is('.swiper-next')) {
+                mySwiper.swipeNext();
+            } else {
+                mySwiper.swipePrev();
+            }
+        });
+
+    }); 
+}
+
+if ($.cookie('ug_preferences') && $('#authentication').text() == '0' && !$.cookie('categoriesShown')) {
+    $('html,body').animate({scrollTop:$('#custom-content-begin').offset().top}, 500);
+    $.cookie("categoriesShown", 1);
+}
+
+$('.ug-menu-toggle').on('click', function() {
+    $('.cbp-hsmenu-wrapper').toggleClass('open');
+});
+
+
+var ugCheckbox = document.querySelectorAll('.ug-switch-btn'),
+    i=0;
+
+$.each(ugCheckbox, function() {
+    i++;
+
+    var mySwitch = new Switch(this),
+        eventType = ( !mobilecheck() ) ? 'click' : 'touchstart';
+
+    mySwitch.el.addEventListener(eventType, function(e){
+        e.preventDefault();
+        mySwitch.toggle();
+    }, false);
+
+    if (i === 1 && !$.cookie('ug_preferences') && $('#authentication').text() == '0') {
+        mySwitch.toggle();
+    }
+});
+
+$('.zero-out').on('click', function(e) {
+    e.preventDefault();
+
+    $.each(ugCheckbox, function() {
+        if (this.checked) {
+            $('input[name='+this.name+']').parent().find('.ios-switch').click();
+        }
+    });
 });
 
 $('#ug-scroll-top-btn').on('click', function(e) {
