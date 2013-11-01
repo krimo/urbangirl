@@ -612,4 +612,6 @@ function is_old_post($days = 121) {
     }
 }
 
+add_filter( 'allow_dev_auto_core_updates', '__return_false' );
+
 ?>

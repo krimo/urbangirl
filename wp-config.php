@@ -17,6 +17,8 @@
  * @package WordPress
  */
 
+define( 'WP_AUTO_UPDATE_CORE', true );
+
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 define('DB_NAME', 'krimo_wp');
 define('DB_USER', 'krimo_admin');
