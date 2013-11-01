@@ -56,4 +56,5 @@
     </ul>
     <hr>
     <img src="http://dummyimage.com/300x300/222/ffffff.png&text=votre+pub+ici" alt="">
+    <?php (is_active_sidebar('sidebar-2')) ? dynamic_sidebar( 'sidebar-2' ) : ''; ?>
 </aside>

@@ -12,7 +12,7 @@ if (menuClass) {
     new cbpHorizontalSlideOutMenu(menuClass);
 }
 
-imagesLoaded( document.querySelector('body'), function() {
+imagesLoaded( document.querySelector('.swiper-container'), function() {
 
     var mySwiper = $('.swiper-container').swiper({
         mode:'horizontal',
@@ -31,14 +31,12 @@ imagesLoaded( document.querySelector('body'), function() {
         }
     });
 
-    $('img:not(.ug-logo)').addClass('img-loaded');
-
-    if ($.cookie('ug_preferences') && $('#authentication').text() == '0' && !$.cookie('categoriesShown')) {
-        $('html,body').animate({scrollTop:$('#custom-content-begin').offset().top}, 500);
-        $.cookie("categoriesShown", 1);
-    }
-
 });
+
+if ($.cookie('ug_preferences') && $('#authentication').text() == '0' && !$.cookie('categoriesShown')) {
+    $('html,body').animate({scrollTop:$('#custom-content-begin').offset().top}, 500);
+    $.cookie("categoriesShown", 1);
+}
 
 $('.ug-menu-toggle').on('click', function() {
     $('.cbp-hsmenu-wrapper').toggleClass('open');

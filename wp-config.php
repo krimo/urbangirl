@@ -18,13 +18,8 @@
  */
 
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
-/** Nom de la base de données de WordPress. */
 define('DB_NAME', 'krimo_wp');
-
-/** Utilisateur de la base de données MySQL. */
 define('DB_USER', 'krimo_admin');
-
-/** Mot de passe de la base de données MySQL. */
 define('DB_PASSWORD', 'Veniversum511');
 
 /** Adresse de l'hébergement MySQL. */

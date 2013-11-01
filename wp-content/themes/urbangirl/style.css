@@ -5095,16 +5095,13 @@ body {
 }
 img {
     width:100%;
-    opacity:0;
     -webkit-transition:opacity .25s ease-in;
     -moz-transition:opacity .25s ease-in;
     -ms-transition:opacity .25s ease-in;
     -o-transition:opacity .25s ease-in;
     transition:opacity .25s ease-in
 }
-img.img-loaded,img.ug-logo {
-    opacity:1
-}
+
 img[src^="http://www.hellocoton"] {
     width:auto;
     display:none

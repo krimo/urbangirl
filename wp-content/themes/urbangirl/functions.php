@@ -501,9 +501,18 @@ function ug_preview_link($link) {
 
 function wpb_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'La sidebar', 'wpb' ),
+		'name' => __( 'La sidebar du haut', 'wpb' ),
 		'id' => 'sidebar-1',
 		'description' => __( 'Vous pouvez ajouter des widgets qui vont apparaitre au dessous de la pub de la sidebar -- krimo.', 'wpb' ),
+		'before_widget' => '<hr />',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'La sidebar du bas', 'wpb' ),
+		'id' => 'sidebar-2',
+		'description' => __( 'Pareil, pour le dessous -- krimo.', 'wpb' ),
 		'before_widget' => '<hr />',
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
