@@ -46,7 +46,7 @@
                                         $args = array('post_type' => 'post','posts_per_page' => 5,'meta_key' => 'ug_post_views_count', 'orderby' => 'meta_value_num');
                                     }
 									$query = new WP_Query($args);
-									while ($query->have_posts()) : $query->the_post();
+									while ($query->have_posts()) : $query->the_post(); if (!is_old_post(365)) {
 								?>
 								<div class="swiper-slide">
 									<div class="crop">
@@ -58,7 +58,7 @@
 										<p><?php the_excerpt(); ?> <br> <a href="<?php echo get_permalink(); ?>">Lire l'article &raquo;</a></p>
 									</div>
 								</div>
-								<?php endwhile; ?>
+								<?php } endwhile; ?>
 							</div>
 						</div>
 					</div>
