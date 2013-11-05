@@ -95,12 +95,12 @@
                     'cat' => implode(',', $currentPostCategories)
                 );
                 $query = new WP_Query($args);
-                while ($query->have_posts()) : $query->the_post();
+                while ($query->have_posts()) : $query->the_post(); if (!is_old_post(365)) {
                 ?>
                 <div class="large-6 columns">
                     <?php get_template_part('ug-article-panel'); ?>
                 </div>
-                <?php endwhile; wp_reset_query();?>
+                <?php } endwhile; wp_reset_query();?>
             </div>
             <div class="row">
                 <div class="large-12 columns">
@@ -122,7 +122,7 @@
                 <?php
                 $args = array( 'posts_per_page' => 2, 'orderby' => 'rand', 'category' => 4029);
                 $rand_posts = get_posts( $args );
-                foreach ( $rand_posts as $post ) : setup_postdata( $post );?>
+                foreach ( $rand_posts as $post ) : setup_postdata( $post ); if (!is_old_post(365)) { ?>
                     <li>
                         <article class="clearfix">
                             <a href="<?php the_permalink() ?>" class="left picture">
@@ -133,7 +133,7 @@
                             <h5><a href="<?php the_permalink() ?>"><?php the_title(); ?></a> <br><small>publié il y a <em><?=human_time_diff( get_the_time('U'), current_time('timestamp') ); ?></em></small></h5>
                         </article>
                     </li>
-                <?php endforeach;
+                <?php } endforeach;
                 wp_reset_postdata();
                 ?>
             </ul>
