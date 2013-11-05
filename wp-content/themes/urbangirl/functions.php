@@ -614,4 +614,19 @@ function is_old_post($days = 121) {
 
 add_filter( 'allow_dev_auto_core_updates', '__return_false' );
 
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+	register_post_type( 'sponso',
+		array(
+			'labels' => array(
+				'name' => __( 'Articles sponso' ),
+				'singular_name' => __( 'Article sponso' )
+			),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => '', 'with_front' => FALSE)
+		)
+	);
+}
+
 ?>
