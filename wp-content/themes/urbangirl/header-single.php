@@ -27,10 +27,13 @@
     foreach (get_the_category() as $c) {
         array_push($chooseCat, $c->term_id);
     }
-    $chooseCatId = min($chooseCat);
 
-    $theSlug = (get_category($chooseCatId)->category_parent > 0) ? get_category(get_category($chooseCatId)->parent)->slug : get_category($chooseCatId)->slug;
-    $theName = get_category($chooseCatId)->name;
+    if (sizeof($chooseCat) > 0) {
+        $chooseCatId = min($chooseCat);
+
+        $theSlug = (get_category($chooseCatId)->category_parent > 0) ? get_category(get_category($chooseCatId)->parent)->slug : get_category($chooseCatId)->slug;
+        $theName = get_category($chooseCatId)->name;   
+    }
 ?>
 <body class="ug-category ug-page ug-<?= $theSlug; ?>">
 
