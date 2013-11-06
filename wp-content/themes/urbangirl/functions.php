@@ -623,8 +623,7 @@ function create_post_type() {
 				'singular_name' => __( 'Article sponso' )
 			),
 		'public' => true,
-		'has_archive' => true,
-		'rewrite' => array('slug' => '', 'with_front' => FALSE)
+		'has_archive' => true
 		)
 	);
 }
