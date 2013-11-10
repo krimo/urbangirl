@@ -9,6 +9,9 @@
     <footer class="ug-footer">
         <div class="row">
             <div class="large-4 columns">
+                
+                <p>Nous somme le <?= date('d/m/Y'); ?></p>
+
                 <ul class="no-bullet">
                     <li><a href="<?= get_page_link(11026); ?>">Qu'est-ce qu'UrbanGirl.fr ?</a></li>
                     <li><a href="<?= get_page_link(11023); ?>">Contact annonceurs</a></li>
