@@ -31,6 +31,9 @@ RewriteCond %{HTTP_HOST} ^urbangirl-beaute\.fr$ [NC]
 RewriteRule ^(.*)$ http://urbangirl.fr/beaute/$1 [P]
 </IfModule>
 Redirect 301 /vin-2 http://urbangirl-gastronomie.fr/vin
+Redirect 301 /conseils-beaute http://urbangirl-beaute.fr
+Redirect 301 /mode-2 http://urbangirl-mode.fr
+Redirect 301 /gastronomie-2 http://urbangirl-gastronomie.fr
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On

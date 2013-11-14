@@ -84,6 +84,33 @@
                 </div>
                 <?php } } ?>
             </div>
+            <hr class="home-hr">
+            <div class="row">
+                <?php foreach ($categories as $cat) { if ($cat->count >= 1 && $i>=4 && $i<6 && !in_array($cat->cat_ID, $displayedCats)) { $i++; ?>
+                <div class="large-6 columns">
+                    <h4 class="ug-home-title"><span><a href="<?= get_category_link($cat); ?>"><?=$cat->name;?></a></span></h4>
+                    <ul class="ug-article-list">
+
+                        <?php
+                            $args = array(
+                                'post_type' => 'post',
+                                'category_name' => $cat->slug,
+                                'posts_per_page' => 6
+                            );
+                            $query = new WP_Query($args);
+                            while ($query->have_posts()) : $query->the_post();
+                        ?>
+
+                        <li>
+                            <?php get_template_part('ug-article-small'); ?>
+                        </li>
+
+                        <?php endwhile; ?>
+                    </ul>
+                </div>
+                <?php } } ?>
+            </div>
+            <hr class="home-hr">
             <div class="row">
                 <div class="large-12 columns">
                     <div class="section-container tabs" data-section="tabs">
