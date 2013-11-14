@@ -133,12 +133,12 @@ function queryToArray($qry) {
 	   $qry = $q['query'];
 	  }
 	}else {
-			return false;
+		return false;
 	}
 
 	foreach (explode('&', $qry) as $couple) {
-			list ($key, $val) = explode('=', $couple);
-			$result[$key] = $val;
+		list ($key, $val) = explode('=', $couple);
+		$result[$key] = $val;
 	}
 
 	return empty($result) ? false : $result;
