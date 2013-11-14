@@ -62,7 +62,7 @@
             <div class="row">
                 <?php foreach ($categories as $cat) { if ($cat->count >= 1 && $i>=2 && $i<4 && !in_array($cat->cat_ID, $displayedCats)) { $i++; ?>
                 <div class="large-6 columns">
-                    <h4 class="ug-home-title"><span><?=$cat->name;?></span></h4>
+                    <h4 class="ug-home-title"><span><a href="<?= get_category_link($cat); ?>"><?=$cat->name;?></a></span></h4>
                     <ul class="ug-article-list">
 
                         <?php

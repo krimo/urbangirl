@@ -5,8 +5,8 @@
 
         <?php
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-            query_posts('posts_per_page=15&cat='.get_query_var('cat').'&paged='.$paged);
+            $wp_query = new WP_Query('posts_per_page=15&cat='.get_query_var('cat').'&paged='.$paged);
+            // query_posts('posts_per_page=15&cat='.get_query_var('cat').'&paged='.$paged);
             if ( have_posts() ) : while ( have_posts() ) : the_post();
         ?>
         <!-- post -->
@@ -27,8 +27,7 @@
                 get_bloginfo('url').'/couple' => 'http://urbangirl-couple.fr',
                 get_bloginfo('url').'/gastronomie' => 'http://urbangirl-gastronomie.fr',
                 get_bloginfo('url').'/deco' => 'http://urbangirl-decoration.fr',
-                get_bloginfo('url').'/bonnes-adresses' => 'http://urbangirl-sorties.fr',
-                get_bloginfo('url').'/non-classe' => 'http://96.30.54.222/~urbangi/non-classe',
+                get_bloginfo('url').'/bonnes-adresses' => 'http://urbangirl-sorties.fr'
             );
 
             foreach ($sitesArray as $k => $v) {
