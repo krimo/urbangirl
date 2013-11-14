@@ -13,7 +13,7 @@
 				<h4 class="ug-home-title"><span>Articles du jour</span></h4>
 				<?php
 					$args = array(
-						'post_type' => 'post',
+						'post_type' => array('post','1'),
                         'include' => $categories_to_display,
 						'posts_per_page' => 3
 					);

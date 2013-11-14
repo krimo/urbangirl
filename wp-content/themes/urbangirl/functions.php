@@ -102,7 +102,6 @@ function is_subcategory (){
 	return ( $category->parent == '0' ) ? false : true;
 }
 
-
 function category_has_children() {
 global $wpdb;
 $term = get_queried_object();
@@ -504,6 +503,96 @@ function wpb_widgets_init() {
 		'name' => __( 'La sidebar du haut', 'wpb' ),
 		'id' => 'sidebar-1',
 		'description' => __( 'Vous pouvez ajouter des widgets qui vont apparaitre au dessous de la pub de la sidebar -- krimo.', 'wpb' ),
+		'before_widget' => '<hr />',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Widget mode', 'wpb' ),
+		'id' => 'sidebar-mode',
+		'description' => __( 'Widget mode', 'wpb' ),
+		'before_widget' => '<hr />',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Widget beaute', 'wpb' ),
+		'id' => 'sidebar-beaute',
+		'description' => __( 'Widget beaute', 'wpb' ),
+		'before_widget' => '<hr />',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Widget gastronomie', 'wpb' ),
+		'id' => 'sidebar-gastronomie',
+		'description' => __( 'Widget gastronomie', 'wpb' ),
+		'before_widget' => '<hr />',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Widget beaute', 'wpb' ),
+		'id' => 'sidebar-beaute',
+		'description' => __( 'Widget beaute', 'wpb' ),
+		'before_widget' => '<hr />',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Widget deco', 'wpb' ),
+		'id' => 'sidebar-deco',
+		'description' => __( 'Widget deco', 'wpb' ),
+		'before_widget' => '<hr />',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Widget maman', 'wpb' ),
+		'id' => 'sidebar-maman',
+		'description' => __( 'Widget maman', 'wpb' ),
+		'before_widget' => '<hr />',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Widget mariage', 'wpb' ),
+		'id' => 'sidebar-mariage',
+		'description' => __( 'Widget mariage', 'wpb' ),
+		'before_widget' => '<hr />',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Widget couple', 'wpb' ),
+		'id' => 'sidebar-couple',
+		'description' => __( 'Widget couple', 'wpb' ),
+		'before_widget' => '<hr />',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Widget actualites', 'wpb' ),
+		'id' => 'sidebar-actualites',
+		'description' => __( 'Widget actualites', 'wpb' ),
+		'before_widget' => '<hr />',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Widget bonnes-adresses', 'wpb' ),
+		'id' => 'sidebar-bonnes-adresses',
+		'description' => __( 'Widget bonnes-adresses', 'wpb' ),
 		'before_widget' => '<hr />',
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',

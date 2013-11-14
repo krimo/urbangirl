@@ -21,6 +21,10 @@
 	<a href="http://journalduluxe.fr"><img src="<?= get_template_directory_uri() . '/images/pub.jpg' ?>" alt="Le Journal du Luxe"></a>
 	<?php (is_active_sidebar('sidebar-1')) ? dynamic_sidebar( 'sidebar-1' ) : ''; ?>
 	<hr>
+	<?php
+		$theCatSlug = get_category(get_query_var('cat'))->slug; 
+		(is_active_sidebar('sidebar-'.$theCatSlug)) ? dynamic_sidebar('sidebar-'.$theCatSlug) : '';
+	?>
 	<h4 class="text-center">Suivez UrbanGirl</h4>
 	<ul class="small-block-grid-3 ug-social-list text-center">
 		<li>
