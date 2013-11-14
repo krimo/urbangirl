@@ -76,7 +76,7 @@
             <div class="panel">
                 <div class="row">
                     <div class="large-3 columns">
-                        <img src="<?= get_avatar( get_the_author_meta( 'ID' ), 256 ); ?>" alt="">
+                        <?= get_avatar( get_the_author_meta( 'ID' ), 256 ); ?>
                     </div>
                     <div class="large-9 columns">
                         <h4>A propos de <?php the_author(); ?></h4>
