@@ -9,8 +9,6 @@
 	<footer class="ug-footer">
 		<div class="row">
 			<div class="large-4 columns">
-				
-				<p>Nous sommes le <?= date('d/m/Y'); ?></p>
 
 				<ul class="no-bullet">
 					<li><a href="<?= get_page_link(11026); ?>">Qu'est-ce qu'UrbanGirl.fr ?</a></li>
@@ -32,6 +30,8 @@
 						<p><em class="google-share-count"><?= gplus_count(); ?></em></p>
 					</li>
 				</ul>
+				
+				<p>Nous sommes le <?= date('d/m/Y'); ?></p>
 			</div>
 			<div class="large-4 columns">
 				<h4>&copy; UrbanGirl.fr</h4>
