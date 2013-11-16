@@ -119,7 +119,17 @@
                 <div class="row">
                     <hr class="home-hr">
                     <div class="large-3 columns">
-                        <img src="<?= get_template_directory_uri().'/images/' ?>category-img.png" alt="Bienvenue sur la categorie <?php single_cat_title('',false); ?>" class="hide-for-small">
+                        <?php 
+                            $file = get_template_directory_uri().'/images/'.get_category(get_query_var('cat'))->slug.'.png';
+                            $file_headers = @get_headers($file);
+                            if($file_headers[0] == 'HTTP/1.1 404 Not Found') {
+                                $imgUrl = get_template_directory_uri().'/images/category-img.png';
+                            }
+                            else {
+                                $imgUrl = $file;
+                            }
+                        ?>
+                        <img src="<?= $imgUrl; ?>" alt="Bienvenue sur la categorie <?php single_cat_title('',false); ?>" class="hide-for-small">
                     </div>
                     <div class="large-9 columns">
                         <div class="ug-category-description">
