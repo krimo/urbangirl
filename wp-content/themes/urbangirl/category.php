@@ -147,7 +147,7 @@
                 <?php } } ?>
             </div>
             <hr class="home-hr">
-            <div class="row">
+<!--             <div class="row">
                 <div class="large-12 columns">
                     <div class="section-container tabs" data-section="tabs">
                         <?php
@@ -176,7 +176,7 @@
                         <?php }} ?>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <section class="category-intro">
                 <div class="row">
                     <hr class="home-hr">
