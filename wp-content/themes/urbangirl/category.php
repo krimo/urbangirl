@@ -119,7 +119,7 @@
             </div>
             <hr class="home-hr">
             <div class="row">
-                <?php foreach ($categories as $cat) { if ($cat->count >= 1 && $i>=4 && $i<6 && !in_array($cat->cat_ID, $displayedCats)) { 
+                <?php foreach ($categories as $cat) { if ($cat->count >= 1 && $i>=6 && $i<8 && !in_array($cat->cat_ID, $displayedCats)) { 
                     $i++; 
                     array_push($displayedCats, $cat->cat_ID);
                 ?>
