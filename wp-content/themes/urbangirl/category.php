@@ -61,7 +61,10 @@
             </div>
             <hr class="home-hr">
             <div class="row">
-                <?php foreach ($categories as $cat) { if ($cat->count >= 1 && $i>=2 && $i<4 && !in_array($cat->cat_ID, $displayedCats)) { $i++; ?>
+                <?php foreach ($categories as $cat) { if ($cat->count >= 1 && $i>=2 && $i<4 && !in_array($cat->cat_ID, $displayedCats)) { 
+                    $i++;
+                    array_push($displayedCats, $cat->cat_ID);
+                ?>
                 <div class="large-6 columns">
                     <h4 class="ug-home-title"><span><a href="<?= get_category_link($cat); ?>"><?=$cat->name;?></a></span></h4>
                     <ul class="ug-article-list">
@@ -87,7 +90,10 @@
             </div>
             <hr class="home-hr">
             <div class="row">
-                <?php foreach ($categories as $cat) { if ($cat->count >= 1 && $i>=4 && $i<6 && !in_array($cat->cat_ID, $displayedCats)) { $i++; ?>
+                <?php foreach ($categories as $cat) { if ($cat->count >= 1 && $i>=4 && $i<6 && !in_array($cat->cat_ID, $displayedCats)) { 
+                    $i++; 
+                    array_push($displayedCats, $cat->cat_ID);
+                ?>
                 <div class="large-6 columns">
                     <h4 class="ug-home-title"><span><a href="<?= get_category_link($cat); ?>"><?=$cat->name;?></a></span></h4>
                     <ul class="ug-article-list">
