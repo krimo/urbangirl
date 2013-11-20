@@ -5613,7 +5613,7 @@ input.sb-search-input::-webkit-input-placeholder,input.sb-search-input:-moz-plac
 }
 .ug-contact-form input,.ug-contact-form textarea {
     font-size:1.25em;
-    padding:.75em 1em
+    padding:.45em 1em
 }
 .ug-contact-form textarea {
     min-height:300px
