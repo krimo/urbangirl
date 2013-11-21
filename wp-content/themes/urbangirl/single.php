@@ -92,19 +92,11 @@
             <h4 class="ug-home-title"><span>Vous aimerez aussi</span></h4>
             <div style="display:none;"><?= implode(',', $currentPostCategories); ?></div>
             <div class="row">
-                <?php
-                $args = array(
-                    'posts_per_page' => 2,
-                    'orderby' => 'rand',
-                    'cat' => ''.implode(',', $currentPostCategories)
-                );
-                $query = new WP_Query($args);
-                while ($query->have_posts()) : $query->the_post(); if (!is_old_post(365)) {
-                ?>
+                <?php $posts = get_posts('orderby=rand&numberposts=2&category='.implode(',', $currentPostCategories)); foreach($posts as $post) { ?>
                 <div class="large-6 columns">
                     <?php get_template_part('ug-article-panel'); ?>
                 </div>
-                <?php } endwhile; wp_reset_query();?>
+                <?php };?>
             </div>
             <div class="row">
                 <div class="large-12 columns">
