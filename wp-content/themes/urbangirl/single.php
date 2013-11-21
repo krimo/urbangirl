@@ -120,10 +120,12 @@
             <h4>A découvrir sur UrbanGirl</h4>
             <ul class="ug-article-list">
                 <?php
+                $this_post = $post->ID;
                 $args = array(
                     'posts_per_page' => 2,
                     'orderby' => 'rand',
-                    'cat' => 4029
+                    'cat' => 4029,
+                    'post__not_in' => array($this_post)
                 );
                 $query = new WP_Query($args);
                 while ($query->have_posts()) : $query->the_post(); if (!is_old_post(365)) {
