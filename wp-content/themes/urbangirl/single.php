@@ -41,7 +41,10 @@
                 foreach((get_the_category()) as $category) {
                     if($category->slug == 'a-decouvrir') continue;
                     echo ', <a href="'.get_category_link( $category->cat_ID ).'">'.$category->cat_name.'</a>';
-                    array_push($currentPostCategories, $category->cat_ID);
+
+                    if ($category->parent == '0') {
+                        array_push($currentPostCategories, $category->cat_ID);
+                    }
                 } ?>
             </p>
         </header>
