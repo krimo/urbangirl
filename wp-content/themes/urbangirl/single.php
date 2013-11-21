@@ -39,8 +39,8 @@
                 <?php } ?>
                 <?php
                 foreach((get_the_category()) as $category) {
-                    echo ', <a href="'.get_category_link( $category->cat_ID ).'">'.$category->cat_name.'</a>';
                     if($category->slug == 'a-decouvrir') continue;
+                    echo ', <a href="'.get_category_link( $category->cat_ID ).'">'.$category->cat_name.'</a>';
                     array_push($currentPostCategories, $category->cat_ID);
                 } ?>
             </p>

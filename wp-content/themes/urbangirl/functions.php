@@ -165,7 +165,12 @@ function queryToArray($qry) {
 	$final .= '<span typeof="v:Breadcrumb"><a href="' . get_category_link( $parent->term_id ) . '" title="Voir tous les articles de '.$parent->cat_name.'" rel="v:url" property="v:title">'.$name.'</a></span>' . $separator;
   else
 	$final .= $name.$separator;
-  return $final;}
+  if ($id != 4029) {
+  	return $final;
+  } else {
+  	return '';
+  }
+}
 
   // Breadcrumb
   function seomix_content_breadcrumb() {
