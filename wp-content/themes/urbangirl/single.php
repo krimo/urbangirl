@@ -87,6 +87,7 @@
             <?php } ?>
 
             <h4 class="ug-home-title"><span>Vous aimerez aussi</span></h4>
+            <div style="display:none;"><?= implode(',', $currentPostCategories); ?></div>
             <div class="row">
                 <?php
                 $args = array(
