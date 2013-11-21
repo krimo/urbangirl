@@ -5032,6 +5032,9 @@ a.th {
     z-index:1;
     max-height: 200px;
 }
+.ug-home .swiper-container {
+    max-height: 720px;
+}
 .swiper-wrapper {
     position:relative;
     width:100%;
