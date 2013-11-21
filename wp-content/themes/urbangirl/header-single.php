@@ -1,12 +1,22 @@
 <?php
     $category_slug = get_the_category()[0]->slug;
 
-    $cslug = is_subcategory() ? get_category(get_category(get_query_var('cat'))->parent)->slug : get_category(get_query_var('cat'))->slug;
-
     if (in_array($category_slug, array('beaute', 'maman'))) {
         $logo_slug = 'logo-alt-black.png';
     } else {
         $logo_slug = 'logo-alt.png';
+    }
+
+    $chooseCat = array();
+    foreach (get_the_category() as $c) {
+        array_push($chooseCat, $c->term_id);
+    }
+
+    if (sizeof($chooseCat) > 0) {
+        $chooseCatId = min($chooseCat);
+
+        $theSlug = (get_category($chooseCatId)->category_parent > 0) ? get_category(get_category($chooseCatId)->parent)->slug : get_category($chooseCatId)->slug;
+        $theName = get_category($chooseCatId)->name;   
     }
 
     $ugMetaTable = array(
@@ -21,10 +31,10 @@
         'bonnes-adresses' => array('urbangirl-sorties.fr','Les meilleures adresses à Paris, Lyon et Marseille sont présentées sur le magazine des sorties UrbanGirl.')
     );
 
-    $ugPageTitle = $ugMetaTable[$category_slug][0];
-    $ugMetaDesc = $ugMetaTable[$category_slug][1];
+    $ugPageTitle = $ugMetaTable[$theSlug][0];
+    $ugMetaDesc = $ugMetaTable[$theSlug][1];
 
-    var_dump($category_slug);
+    var_dump($theSlug);
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>               <html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -41,19 +51,6 @@
     <script src="<?= get_template_directory_uri().'/js/' ?>modernizr.min.js"></script>
 
 </head>
-<?php
-    $chooseCat = array();
-    foreach (get_the_category() as $c) {
-        array_push($chooseCat, $c->term_id);
-    }
-
-    if (sizeof($chooseCat) > 0) {
-        $chooseCatId = min($chooseCat);
-
-        $theSlug = (get_category($chooseCatId)->category_parent > 0) ? get_category(get_category($chooseCatId)->parent)->slug : get_category($chooseCatId)->slug;
-        $theName = get_category($chooseCatId)->name;   
-    }
-?>
 <body class="ug-category ug-page ug-<?= $theSlug; ?>">
 
     <div id="top" style="position:absolute;top:0;left:0;width:100%;height:0;"></div>
