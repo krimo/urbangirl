@@ -1,10 +1,14 @@
 <?php
     $category_slug = get_the_category()[0]->slug;
+
+    $cslug = is_subcategory() ? get_category(get_category(get_query_var('cat'))->parent)->slug : get_category(get_query_var('cat'))->slug;
+
     if (in_array($category_slug, array('beaute', 'maman'))) {
         $logo_slug = 'logo-alt-black.png';
     } else {
         $logo_slug = 'logo-alt.png';
     }
+
     $ugMetaTable = array(
         'mode' => array('urbangirl-mode.fr','urbangirl-mode.fr est le magazine féminin dédié à la mode et au prêt-à-porter: conseils, astuces look, on vous dit tout !'),
         'beaute' => array('urbangirl-beaute.fr','Le magazine beauté dédié aux soins beauté, au sport, au bien-être, aux astuces make up et tout ce qui intéresse les femmes !'),
@@ -17,8 +21,8 @@
         'bonnes-adresses' => array('urbangirl-sorties.fr','Les meilleures adresses à Paris, Lyon et Marseille sont présentées sur le magazine des sorties UrbanGirl.')
     );
 
-    $ugPageTitle = $ugMetaTable[$category_slug][0];
-    $ugMetaDesc = $ugMetaTable[$category_slug][1];
+    $ugPageTitle = $ugMetaTable[$cslug][0];
+    $ugMetaDesc = $ugMetaTable[$cslug][1];
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>               <html class="no-js lt-ie9" lang="en" > <![endif]-->
