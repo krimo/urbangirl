@@ -88,6 +88,7 @@
 
             <h4 class="ug-home-title"><span>Vous aimerez aussi</span></h4>
             <div class="row">
+                <div style="display:none;"><?= implode(',', $currentPostCategories); ?></div>
                 <?php
                 $args = array(
                     'posts_per_page' => 2,
@@ -97,7 +98,6 @@
                 $query = new WP_Query($args);
                 while ($query->have_posts()) : $query->the_post(); if (!is_old_post(365)) {
                 ?>
-                <div style="display:none;"><?= implode(',', $currentPostCategories); ?></div>
                 <div class="large-6 columns">
                     <?php get_template_part('ug-article-panel'); ?>
                 </div>
