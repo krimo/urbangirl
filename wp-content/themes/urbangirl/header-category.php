@@ -28,7 +28,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+    <?php if (!is_subcategory()) { ?>
+    <title><?= ucfirst($ugPageTitle).' : magazine de '.$category_slug.' feminin'; ?></title>
+    <?php } else { ?>
     <title><?= ucfirst(get_category(get_query_var('cat'))->name); ?> | <?= $ugPageTitle; ?></title>
+    <?php } ?>
     <meta name="description" content="<?= $ugMetaDesc; ?>">
 
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
