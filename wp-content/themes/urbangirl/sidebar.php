@@ -17,8 +17,7 @@
 		<span></span>
 		<a href="#" class="close">&times;</a>
 	</div>
-	<hr>
-	<a href="http://journalduluxe.fr"><img src="<?= get_template_directory_uri() . '/images/pub.jpg' ?>" alt="Le Journal du Luxe"></a>
+	<?php (is_active_sidebar('sidebar-1')) ? dynamic_sidebar( 'sidebar-pub' ) : ''; ?>
 	<?php (is_active_sidebar('sidebar-1')) ? dynamic_sidebar( 'sidebar-1' ) : ''; ?>
 	<hr>
 	<?php

@@ -509,6 +509,15 @@ function wpb_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name' => __( 'Widget Pub', 'wpb' ),
+		'id' => 'sidebar-pub',
+		'description' => __( 'Widget pour remplacer la pub Journal Du Luxe.', 'wpb' ),
+		'before_widget' => '<hr />',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
 		'name' => __( 'Widget mode', 'wpb' ),
 		'id' => 'sidebar-mode',
 		'description' => __( 'Widget mode', 'wpb' ),
