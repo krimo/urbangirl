@@ -21,8 +21,10 @@
         'bonnes-adresses' => array('urbangirl-sorties.fr','Les meilleures adresses à Paris, Lyon et Marseille sont présentées sur le magazine des sorties UrbanGirl.')
     );
 
-    $ugPageTitle = $ugMetaTable[$cslug][0];
-    $ugMetaDesc = $ugMetaTable[$cslug][1];
+    $ugPageTitle = $ugMetaTable[$category_slug][0];
+    $ugMetaDesc = $ugMetaTable[$category_slug][1];
+
+    var_dump($category_slug);
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>               <html class="no-js lt-ie9" lang="en" > <![endif]-->
