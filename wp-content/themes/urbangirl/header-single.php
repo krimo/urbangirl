@@ -29,7 +29,7 @@
     <meta name="viewport" content="width=device-width">
     <meta property="og:image" content="<?= (has_post_thumbnail()) ? wp_get_attachment_thumb_url(get_post_thumbnail_id()) : displayBackupImage(true); ?>" />
 
-    <title><?php the_title(); ?> | <? $ugPageTitle; ?></title>
+    <title><?php the_title(); ?> | <?= $ugPageTitle; ?></title>
 
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <script src="<?= get_template_directory_uri().'/js/' ?>modernizr.min.js"></script>
