@@ -5029,7 +5029,8 @@ a.th {
     -ms-backface-visibility:hidden;
     -o-backface-visibility:hidden;
     backface-visibility:hidden;
-    z-index:1
+    z-index:1;
+    max-height: 200px;
 }
 .swiper-wrapper {
     position:relative;
