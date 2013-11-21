@@ -2,7 +2,7 @@
 <!-- Main article -->
 <article class="row" role="main">
     <?php
-    $currentPostCategories = wp_get_post_categories();
+    $currentPostCategories = array();
     if (have_posts()) : while (have_posts()) : the_post();
     ?>
 
@@ -38,9 +38,10 @@
                 <em>il y a</em> <?= human_time_diff( get_the_time('U'), current_time('timestamp') ); ?>
                 <?php } ?>
                 <?php
-                foreach($currentPostCategories as $categoryID) {
-                    if($categoryID == 4029) continue;
-                    echo ', <a href="'.get_category_link( $categoryID ).'">'.get_category($categoryID)->name.'</a>';
+                foreach((get_the_category()) as $category) {
+                    if($category->slug == 'a-decouvrir') continue;
+                    echo ', <a href="'.get_category_link( $category->cat_ID ).'">'.$category->cat_name.'</a>';
+                    array_push($currentPostCategories, $category->cat_ID);
                 } ?>
             </p>
         </header>
@@ -89,7 +90,7 @@
             <div class="row">
                 <?php
                 $args = array(
-                    'posts_per_page' => 2,
+                    'posts_per_page' => 3,
                     'orderby' => 'rand',
                     'offset' => '2',
                     'cat' => implode(',', $currentPostCategories)
