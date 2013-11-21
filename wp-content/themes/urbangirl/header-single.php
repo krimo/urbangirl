@@ -13,15 +13,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+    <meta name="description" content="<?= get_the_excerpt(); ?>">
     <meta property="og:image" content="<?= (has_post_thumbnail()) ? wp_get_attachment_thumb_url(get_post_thumbnail_id()) : displayBackupImage(true); ?>" />
-    <meta property="og:description" content="<?php the_excerpt(); ?>" />
+    <meta property="og:description" content="<?= get_the_excerpt(); ?>" />
 
     <title><?php the_title(); ?> | <?php bloginfo('name'); ?></title>
 
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <script src="<?= get_template_directory_uri().'/js/' ?>modernizr.min.js"></script>
 
-    <?php wp_head(); ?>
 </head>
 <?php
     $chooseCat = array();
