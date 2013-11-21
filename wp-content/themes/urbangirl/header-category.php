@@ -28,7 +28,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title><?= $ugPageTitle; ?> | <?php bloginfo('name'); ?></title>
+    <title><?= ucfirst(get_category(get_query_var('cat'))->name); ?> | <?= $_SERVER['HTTP_HOST']; ?></title>
     <meta name="description" content="<?= $ugMetaDesc; ?>">
 
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
