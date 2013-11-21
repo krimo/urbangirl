@@ -88,11 +88,10 @@
 
             <h4 class="ug-home-title"><span>Vous aimerez aussi</span></h4>
             <div class="row">
-                <div style="display:none;"><?= implode(',', $currentPostCategories); ?></div>
                 <?php
                 $args = array(
                     'posts_per_page' => 2,
-                    'orderby' => 'rand',
+                    'offset' => '2',
                     'cat' => implode(',', $currentPostCategories)
                 );
                 $query = new WP_Query($args);
