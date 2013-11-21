@@ -33,8 +33,6 @@
 
     $ugPageTitle = $ugMetaTable[$theSlug][0];
     $ugMetaDesc = $ugMetaTable[$theSlug][1];
-
-    var_dump($theSlug);
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>               <html class="no-js lt-ie9" lang="en" > <![endif]-->
