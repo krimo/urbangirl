@@ -96,7 +96,7 @@
                 <div class="large-6 columns">
                     <?php get_template_part('ug-article-panel'); ?>
                 </div>
-                <?php };?>
+                <?php } wp_reset_postdata();?>
             </div>
             <div class="row">
                 <div class="large-12 columns">
