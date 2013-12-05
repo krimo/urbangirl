@@ -15,7 +15,7 @@
         'mariage' => array('Urbangirl-mariage.fr Magazine mariage','Le magazine mariage Urban Girl s\'adresse aux futures mariées à la recherche d\'informations pour l\'organisation du mariage, les tendances robes et accessoires, et toutes les actus mariage'),
         'couple' => array('Urbangirl-couple.fr Magazine couple séduction et amour','Le magazine Urban Girl dédié au couple propose chaque semaine des conseils pour les relations de couple mais aussi pour les célibataires'),
         'actualites' => array('Urbangirl-actualites.fr Magazine d\'actualités pour les femmes','Le magazine Urbangirl Actualités propose des bons plans, bonnes adresses, actualités technologie et tout ce qui intéresse les femmes !'),
-        'bonnes-adresses' => array('urbangirl-sorties.fr','Les meilleures adresses à Paris, Lyon et Marseille sont présentées sur le magazine des sorties UrbanGirl.')
+        'bonnes-adresses' => array('Urbangirl-sorties.fr Guide des sorties à Paris, Lyon et Marseille','Les meilleures adresses à Paris, Lyon et Marseille sont présentées sur le magazine des sorties UrbanGirl.')
     );
 
     $ugPageTitle = $ugMetaTable[$category_slug][0];
