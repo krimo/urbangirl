@@ -93,7 +93,7 @@
             <div style="display:none;"><?= implode(',', $currentPostCategories); ?></div>
             <div class="row">
                 <?php
-                $args = 'orderby=rand&numberposts=2&category='.implode(',', $currentPostCategories);
+                $args = 'orderby=rand&category='.implode(',', $currentPostCategories).'&posts_per_page=2';
                 $query = new WP_Query($args);
                 while ($query->have_posts()) : $query->the_post(); if (!is_old_post(365)) {
                 ?>
