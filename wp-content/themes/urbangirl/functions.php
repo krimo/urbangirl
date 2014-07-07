@@ -1,5 +1,11 @@
 <?php
 
+/**
+ *	Functions.php
+ *
+ *	A number of functions necessary for the theme
+ */
+
 add_theme_support( 'post-thumbnails' );
 
 function custom_excerpt_length( $length ) {
